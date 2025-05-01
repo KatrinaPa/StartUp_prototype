@@ -11,8 +11,9 @@ This project is part of a school StartUp module and is currently in development.
 ## Screenshots
 
 <p>
-  <img src="/src/assets/scr1.png" width="300" style="display: inline-block; margin-right: 50px;">
-  <img src="/src/assets/scr2.png" width="300" style="display: inline-block;">
+  <img src="/src/assets/scr1.png" width="250" style="display: inline-block; margin-right: 50px;">
+  <img src="/src/assets/scr2.png" width="250" style="display: inline-block; margin-right: 50px;">
+  <img src="/src/assets/scr3.png" width="250" style="display: inline-block;">
 </p>
 
 ## Features
@@ -39,17 +40,19 @@ This project is part of a school StartUp module and is currently in development.
 
 ## Project Structure (so far)
 
+```
 src/
 ├── components/
-│ ├── VetDashboard/
-│ │ ├── pages/
-│ │ │ ├── Appointments/
-│ │ │ ├── SearchResults/
-│ │ │ ├── Reports/
-│ │ │ └── ...
-│ │ ├── NavbarVets.jsx
-│ │ └── QuickActions.jsx
-│ ├── auth/
-│ └── home/
+│   ├── VetDashboard/
+│   │   ├── pages/
+│   │   │   ├── Appointments/
+│   │   │   ├── SearchResults/
+│   │   │   ├── Reports/
+│   │   │   └── ...
+│   │   ├── NavbarVets.jsx
+│   │   └── QuickActions.jsx
+│   ├── auth/
+│   └── home/
 ├── assets/
 └── App.jsx
+```
