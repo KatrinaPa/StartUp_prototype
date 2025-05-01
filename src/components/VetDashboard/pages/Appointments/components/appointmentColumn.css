@@ -1,0 +1,118 @@
+.appointment-column {
+  background: var(--bg-white);
+  border-radius: 24px;
+  padding: 1rem;
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+}
+
+.appointment-column.previous {
+  background: var(--bg-light-grey);
+}
+
+.column-title {
+  font-size: 16px;
+  color: var(--text-primary);
+  font-weight: 500;
+  border-bottom: 1px solid var(--text-secondary);
+  padding: 1rem 1rem 0 1rem;
+  margin: 0 0 1rem 0;
+}
+
+.appointment-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.appointment-card {
+  display: flex;
+  align-items: start;
+  background: var(--bg-input);
+  border-radius: 12px;
+  padding: 0.5rem;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.appointment-card-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}
+
+.appointment-card-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.previous .appointment-card {
+  background: var(--bg-lighter-grey);
+}
+
+.appointment-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.appointment-time {
+  font-size: 12px;
+  color: var(--grey-dark);
+  text-align: left;
+  margin-bottom: 0.3rem;
+}
+
+.patient-name,
+.patient-owner {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-align: right;
+}
+
+.appointment-type {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--grey-dark);
+  text-align: left;
+}
+
+.icon {
+  width: 45px;
+  height: 45px;
+  background-color: var(--grey-medium);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.icon img {
+  width: 35px;
+  object-fit: contain;
+  opacity: 0.8;
+}
+
+.appointment-column.previous .icon {
+  opacity: 0.6;
+}
+
+.icon.other {
+  background-color: var(--bg-white);
+  width: 25px;
+  height: 25px;
+  margin: 0.5rem 0;
+}
+
+.appointment-column.previous .icon.other {
+  background-color: var(--text-secondary);
+}
+.icon.dog,
+.icon.cat {
+  background-color: transparent;
+}

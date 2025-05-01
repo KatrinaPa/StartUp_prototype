@@ -1,0 +1,176 @@
+.new-patient {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: var(--bg-white);
+  border-radius: 24px;
+}
+
+.form-container {
+  border-radius: 24px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 2rem 5rem;
+  padding: 0;
+  background-color: var(--bg-lighter-grey);
+}
+
+.page-title {
+  font-size: 24px;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  padding: 0 4rem;
+  text-align: left;
+}
+
+.form-section {
+  padding: 0 4rem;
+  margin-bottom: 1rem;
+}
+
+.form-section h2 {
+  margin: 2rem 0;
+  color: #333;
+  text-align: left;
+}
+
+.form-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.form-row {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  width: 100%;
+}
+
+.form-group {
+  flex: 1;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+.form-group.pet-select {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.form-group.other-pet {
+  flex: 1;
+  width: 100%;
+  max-width: none;
+}
+
+.form-group.gender-select {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.form-group.birth-date {
+  flex: 1;
+  width: 100%;
+  max-width: none;
+}
+
+.form-group label {
+  display: block;
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 0.1rem;
+  text-align: left;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--grey-medium);
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.pet-type-icons,
+.gender-icons {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.icon-wrapper {
+  width: 44px;
+  height: 44px;
+  background-color: var(--brand-yellow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.icon-wrapper:hover {
+  transform: scale(1.05);
+}
+
+.icon-wrapper svg {
+  width: 30px;
+  height: auto;
+  color: var(--text-primary);
+  opacity: 0.8;
+}
+
+.icon-wrapper .cat-icon {
+  width: 27px;
+}
+
+.gender-icon svg {
+  color: #333;
+}
+
+.new-patient-divider {
+  height: 1px;
+  background: var(--text-secondary);
+  margin: 1rem 4rem;
+  width: auto;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding: 0 4rem;
+  margin-bottom: 2rem;
+}
+
+.upload-btn,
+.save-btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.upload-btn {
+  background: var(--brand-jade);
+  color: var(--grey-dark);
+}
+
+.save-btn {
+  background: var(--brand-pink);
+  color: var(--text-dark);
+}
+
+.upload-btn:hover,
+.save-btn:hover {
+  opacity: 0.9;
+} 
