@@ -11,10 +11,10 @@ This project is part of a school StartUp module and is currently in development.
 ## Screenshots
 
 <p>
-  <img src="/src/assets/scr1.png" width="350" style="display: inline-block; margin-right: 90px;">
-  <img src="/src/assets/scr2.png" width="350" style="display: inline-block; margin-right: 90px;">
-  <img src="/src/assets/scr3.png" width="350" style="display: inline-block; margin-right: 90px;">
-  <img src="/src/assets/scr4.png" width="350" style="display: inline-block;">
+  <img src="/src/assets/scr01.png" width="350" style="display: inline-block; margin-right: 110px;">
+  <img src="/src/assets/scr02.png" width="350" style="display: inline-block; margin-right: 110px;">
+  <img src="/src/assets/scr03.png" width="350" style="display: inline-block; margin-right: 110px;">
+  <img src="/src/assets/scr04.png" width="350" style="display: inline-block; margin-right: 110px;">
 </p>
 
 ## Features
