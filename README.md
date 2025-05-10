@@ -6,14 +6,15 @@ PetMedData is a web-based veterinary practice management system built with React
 
 This project is part of a school StartUp module and is currently in development. The concept and features are undergoing idea and user validation.
 
-**[Prototype Vercel deployment!](https://petmeddataproto-rmzdc55bz-katrinas-projects-ec4d6da8.vercel.app/)**
+**[Prototype Vercel deployment!](https://petmeddataproto-4gycmxxte-katrinas-projects-ec4d6da8.vercel.app/)**
 
 ## Screenshots
 
 <p>
-  <img src="/src/assets/scr1.png" width="250" style="display: inline-block; margin-right: 50px;">
-  <img src="/src/assets/scr2.png" width="250" style="display: inline-block; margin-right: 50px;">
-  <img src="/src/assets/scr3.png" width="250" style="display: inline-block;">
+  <img src="/src/assets/scr1.png" width="350" style="display: inline-block; margin-right: 90px;">
+  <img src="/src/assets/scr2.png" width="350" style="display: inline-block; margin-right: 90px;">
+  <img src="/src/assets/scr3.png" width="350" style="display: inline-block; margin-right: 90px;">
+  <img src="/src/assets/scr4.png" width="350" style="display: inline-block;">
 </p>
 
 ## Features
@@ -45,14 +46,62 @@ src/
 ├── components/
 │   ├── VetDashboard/
 │   │   ├── pages/
-│   │   │   ├── Appointments/
-│   │   │   ├── SearchResults/
-│   │   │   ├── Reports/
-│   │   │   └── ...
+│   │   │   ├── Calendar/
+│   │   │   │   ├── components/
+│   │   │   │   │   ├── CalendarHeader.jsx
+│   │   │   │   │   ├── NewAppointmentModal.jsx
+│   │   │   │   │   └── AppointmentDetailsModal.jsx
+│   │   │   │   ├── config/
+│   │   │   │   │   └── calendarConfig.js
+│   │   │   │   ├── data/
+│   │   │   │   │   └── demoEvents.js
+│   │   │   │   ├── Calendar.jsx
+│   │   │   │   └── calendar.css
+│   │   │   ├── NewPatient/
+│   │   │   │   ├── NewPatient.jsx
+│   │   │   │   └── newPatient.css
+│   │   │   ├── Patients/
+│   │   │   │   ├── patientsData.js
+│   │   │   │   ├── petTypeUtils.js
+│   │   │   │   ├── Patients.jsx
+│   │   │   │   └── patients.css
+│   │   │   └── PetProfiles/
+│   │   │       ├── components/
+│   │   │       │   ├── PetProfile.jsx
+│   │   │       │   └── petProfile.css
+│   │   │       ├── PatientView.jsx
+│   │   │       ├── patientView.css
+│   │   │       └── petProfilesData.js
 │   │   ├── NavbarVets.jsx
 │   │   └── QuickActions.jsx
 │   ├── auth/
 │   └── home/
 ├── assets/
+│   └── pet-profiles/
 └── App.jsx
 ```
+
+### Key Components
+
+- **Calendar/** - Veterinary appointment calendar system
+
+  - Full week view centered on current date
+  - Day and month view options
+  - Appointment creation and management
+
+- **NewPatient/** - New patient registration form
+
+  - Add new pets to the system
+  - Collect owner and pet information
+
+- **Patients/** - Patient catalog and management
+
+  - List of all pet patients
+  - Patient filtering and search
+  - Pet type categorization
+
+- **PetProfiles/** - Detailed pet information
+  - Individual pet profiles
+  - Medical history
+  - Owner information
+  - Vaccination records
