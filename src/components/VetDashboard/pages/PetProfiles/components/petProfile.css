@@ -1,0 +1,305 @@
+.pet-profile {
+    background: var(--bg-white);
+    border-radius: 24px;
+    padding: 2rem;
+    height: auto;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.close-btn:hover {
+  color: var(--text-primary);
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 100%;
+}
+
+.pet-main-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.profile-top-section {
+    display: flex;
+    gap: 2rem;
+    min-width: 0;
+}
+
+.pet-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pet-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.no-image {
+  color: var(--text-secondary);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: var(--bg-lighter-grey);
+}
+
+.profile-details-column {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pet-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.pet-header h2 {
+  margin: 0;
+  font-size: 24px;
+  color: var(--text-primary);
+}
+
+.wrapper-detail-item {
+  background: var(--bg-lighter-grey);
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.detail-item {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.detail-item label {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.detail-item span {
+  color: var(--text-primary);
+  font-size: 15px;
+}
+
+.gender-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gender-icon {
+  margin-left: 0.3rem;
+}
+
+.gender-icon.female {
+  color: var(--brand-pink);
+}
+
+.gender-icon.male {
+  color: var(--brand-jade);
+}
+
+.pet-profile-divider {
+  height: 1px;
+  background: var(--border-light);
+  margin: 1rem 0;
+}
+
+.owner-section h3,
+.visits-section h3,
+.vaccines-info h3 {
+  color: var(--text-primary);
+  font-size: 18px;
+  margin: 0 0 1rem 0;
+}
+
+.owner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.visits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.next-visit-date {
+  color: var(--brand-pink) !important;
+  font-weight: 500;
+}
+
+.vaccine-item {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 14px;
+}
+
+.vaccine-date {
+  color: var(--text-secondary);
+}
+
+.vaccine-name {
+  color: var(--text-primary);
+}
+
+.edit-profile-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    outline: none;
+    flex-shrink: 0;
+}
+
+.edit-profile-btn:hover {
+    color: var(--text-primary);
+    transform: translateY(-1px);
+}
+
+.detail-item-name {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: left;
+}
+
+.detail-item-chip {
+    display: flex;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 12px;
+    text-align: left;
+}
+
+.detail-item-chip span {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.detail-item label,
+.detail-item span {
+    color: var(--text-secondary);
+    font-size: 12px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.detail-item span {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.pet-profile-divider {
+    height: 1px;
+    background: var(--border-light);
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.owner-profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.owner-profile-info h3,
+.vaccines-info h3 {
+    color: var(--text-primary);
+    font-size: 16px;
+    text-align: left;
+    margin: 0 0 0.5rem 0;
+}
+
+.owner-grid {
+    background: var(--bg-lighter-grey);
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+.vaccines-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    background: var(--bg-lighter-grey);
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+}
+
+.vaccine-item {
+    display: flex;
+    text-align: left;
+    gap: 0.8rem;
+    font-size: 12px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.vaccine-name {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .profile-top-section {
+        flex-direction: column;
+    }
+
+    .pet-image {
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .wrapper-detail-item {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}

@@ -1,0 +1,393 @@
+.calendar-page-wrapper {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: var(--bg-white);
+    border-radius: 24px;
+}
+
+.calendar-page {
+  padding: 2rem 5rem;
+  height: 100%;
+  width: 100%;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.calendar-date {
+  font-size: 16px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.calendar-header h2 {
+  font-size: 20px;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.search-input-patients {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  padding-left: 2.5rem;
+  border: 1px solid var(--border-light);
+  border-radius: 50px;
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--bg-white);
+  transition: all 0.2s ease;
+}
+
+.calendar-filters select {
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: 50px;
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--bg-white);
+  transition: all 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.4rem;
+  padding-right: 4rem;
+  cursor: pointer;
+}
+
+.calendar-filters select:hover {
+  border-color: var(--brand-pink);
+  box-shadow: 0 0 0 2px rgba(255, 105, 180, 0.1);
+}
+
+.calendar-filters select:focus {
+  outline: none;
+}
+
+.calendar-container {
+  height: auto;
+}
+
+/* FullCalendar customization */
+.fc {
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-primary);
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1.2em;
+  color: var(--text-primary);
+}
+
+.fc .fc-button {
+  background: var(--brand-jade);
+  border: none;
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  color: var(--text-dark);
+  font-family: 'Roboto', sans-serif;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active,
+.fc .fc-button-primary:not(:disabled):active {
+  background: var(--brand-pink);
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.fc .fc-button:hover {
+  background: var(--brand-pink);
+  opacity: 0.50;
+  color: var(--text-primary);
+}
+
+/* Keep active button at full opacity */
+.fc .fc-button-active:hover {
+  opacity: 1;
+  background: var(--brand-pink) !important;
+}
+
+.fc .fc-button-primary:disabled {
+  color: var(--text-dark);  /* Override default disabled color */
+}
+
+.fc-day-today {
+  background: var(--bg-lighter-grey) !important;
+}
+
+.fc-event {
+  background: var(--brand-pink);
+  border: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+.fc-event-title {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* Past events */
+.past-event {
+  background-color: var(--text-secondary) !important;
+  opacity: 0.7;
+}
+
+/* Today's events */
+.today-event {
+  background-color: var(--brand-jade) !important;
+}
+
+/* Future events */
+.future-event {
+  background-color: var(--brand-pink) !important;
+}
+
+/* Hover effect for all events */
+.fc-event:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.fc a {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  
+  .fc a:hover {
+    color: var(--text-dark);
+    text-decoration: none;
+  }
+  
+  /* Style for Today button */
+  .fc .fc-today-button {
+    background: var(--brand-pink) !important;
+    color: var(--text-dark);
+    font-weight: 700;
+  }
+  
+  .fc .fc-today-button:hover {
+    background: var(--brand-jade) !important;
+    opacity: 1;
+    color: var(--text-dark);
+    font-weight: 700;
+  }
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.appointment-modal {
+  background: var(--bg-lighter-grey);
+  border-radius: 24px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.appointment-modal h3 {
+  margin: 0 0 1.5rem;
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row-calendar {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-row-calendar.three-columns {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.form-row-calendar.two-columns {
+  grid-template-columns: 1fr 1fr;
+}
+
+.form-row-calendar:last-child {
+    margin-bottom: 0;
+  }
+  
+  .form-row-calendar.divider {
+    position: relative;
+    padding-bottom: 1rem;
+  }
+  
+  .form-row-calendar.divider::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--border-light);
+  }  
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.modal-content label {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+  padding: 0.8rem;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  font-size: 14px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font-family: 'Roboto', sans-serif;
+}
+
+.modal-content input:focus,
+.modal-content select:focus,
+.modal-content textarea:focus {
+  outline: none;
+  border-color: var(--brand-pink);
+}
+
+.modal-content textarea {
+  min-height: 45px;
+  resize: vertical;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin: 0;
+}
+
+.modal-actions .cancel-btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+}
+
+.cancel-btn {
+  background: var(--text-secondary);
+  color: var(--text-light);
+  outline: none;
+  opacity: 0.6;
+}
+
+.cancel-btn:hover {
+  opacity: 1;
+}
+
+.cancel-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.edit-btn {
+    padding: 0;
+    background: none;
+    color: var(--text-primary);
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
+    opacity: 0.5;
+}
+  
+.edit-btn svg {
+  width: 30px;
+  height: 30px;
+}
+  
+.edit-btn:hover {
+   opacity: 1;
+}
+
+.edit-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.save-btn {
+  background: var(--brand-pink);
+  color: var(--text-dark);
+}
+  
+.save-btn:hover {
+  opacity: 0.9;
+}
+
+
+/* Pet type selection */
+.pet-type-selection {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.pet-type-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: var(--brand-yellow);
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 10px;  /* Add padding to control icon size */
+  font-size: 25px;  /* Control icon size through font-size */
+}
+
+.pet-type-btn:hover {
+  opacity: 0.8;
+}
+
+.pet-type-btn.active {
+  background: var(--brand-pink);
+}
+
+.other-pet-input {
+  height: 40px;
+}

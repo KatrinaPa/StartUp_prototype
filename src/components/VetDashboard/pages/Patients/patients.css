@@ -1,9 +1,174 @@
-.patients {
-  padding: 0;
+.patients-page {
+  padding: 2rem;
   width: 100%;
-  min-height: 400px;
-  display: flex;
-  justify-content: center;
+  height: 100%;
   background: var(--bg-white);
-  border-radius: 24px;
-} 
+}
+
+.patients-page.view-open {
+  padding: 0;
+  background: none;
+}
+
+.patients-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.patients-header h1 {
+  font-size: 24px;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.search-container {
+  position: relative;
+  width: 300px;
+  padding-right: 5rem;
+}
+
+.search-input-patients {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  padding-left: 2.5rem;
+  border: 1px solid var(--border-light);
+  border-radius: 50px;
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--bg-white);
+  transition: all 0.2s ease;
+}
+
+.search-input-patients:hover {
+  border-color: var(--brand-pink);
+  box-shadow: 0 0 0 2px rgba(255, 105, 180, 0.1);
+}
+
+.search-input-patients:focus {
+  outline: none;
+}
+
+.search-container .search-icon {
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+}
+
+.patients-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+  padding: 0.5rem;
+}
+
+.patient-card {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr 1fr;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--bg-lighter-grey);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  height: fit-content;
+}
+
+.patient-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.patient-info {
+  display: flex;
+  align-items: center;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.pet-icon {
+  background: var(--brand-yellow);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--text-dark);
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.pet-icon.other-pet {
+  background: none;
+  color: var(--brand-yellow);
+}
+
+.pet-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.pet-details h3 {
+  margin: 0;
+  font-size: 15px;
+  color: var(--text-primary);
+  min-width: 100px;
+  text-align: left;
+}
+
+.breed {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 13px;
+}
+
+.owner-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.owner {
+  color: var(--text-primary);
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: right;
+}
+
+.patient-secondary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 40px;
+}
+
+.visit-info {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  font-size: 12px;
+}
+
+.last-visit, .next-visit {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.next-visit {
+  color: var(--brand-pink);
+  font-weight: 500;
+}
+
+.no-results {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+}

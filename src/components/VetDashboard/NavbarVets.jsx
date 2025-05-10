@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { FaSearch, FaPlusCircle, FaEnvelope, FaMicrophone, FaMobileAlt, FaTimes } from 'react-icons/fa'
+import { FaSearch, FaEnvelope, FaMicrophone, FaMobileAlt, FaTimes } from 'react-icons/fa'
 import vetPhoto from '../../assets/vet.jpg'
 import heartIcon from '../../assets/Heart.png'
 import './navbarVets.css'
@@ -55,13 +55,6 @@ export default function NavbarVets({ clinicName, doctorName, onNewPatientClick, 
               </button>
             </div>
           </div>
-
-          <button 
-            className="new-patient-btn"
-            onClick={onNewPatientClick}
-          >
-            <FaPlusCircle /> Jauns pacients
-          </button>
 
           <div className="wrapper-user-info">
             <div className="user-info">

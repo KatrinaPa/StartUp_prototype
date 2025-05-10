@@ -18,6 +18,7 @@
   --text-primary: #333333;    /* Main text color */
   --text-secondary: #666666;  /* Secondary text, labels */
   --text-dark: #49454F;       /* Dark text on light backgrounds */
+  --text-light: #ffffff;       /* Light text on dark backgrounds */
   
   /* Border Colors */
   --border-light: #E0E0E0;    /* Light borders */

@@ -3,21 +3,23 @@ import './vetDashboard.css'
 import QuickActions from './QuickActions'
 import NavbarVets from './NavbarVets'
 import NewPatient from './pages/NewPatient/NewPatient'
-import Appointments from './pages/Appointments/Appointments'
-import SearchResults from './pages/SearchResults/SearchResults'
-import Reports from './pages/Reports/Reports'
-import Medications from './pages/Medications/Medications'
 import Patients from './pages/Patients/Patients'
-import NewAppointment from './pages/NewAppointment/NewAppointment'
+import Calendar from './pages/Calendar/Calendar'
+import { patients } from './pages/Patients/patientsData'
 
 export default function VetDashboard({ clinicName, doctorName }) {
-  const [activeView, setActiveView] = useState('appointments')
-  const [activeQuickAction, setActiveQuickAction] = useState('appointments')
+  const [activeView, setActiveView] = useState('calendar')
+  const [activeQuickAction, setActiveQuickAction] = useState('calendar')
   const [searchQuery, setSearchQuery] = useState('')
+  const [selectedPet, setSelectedPet] = useState(null)
 
   const handleQuickActionClick = (view) => {
     setActiveView(view)
     setActiveQuickAction(view)
+    if (view === 'patients') {
+      setSelectedPet(null)
+      setSearchQuery('')
+    }
   }
 
   const handleNewPatientClick = () => {
@@ -27,32 +29,31 @@ export default function VetDashboard({ clinicName, doctorName }) {
 
   const handleSearch = (query) => {
     setSearchQuery(query)
-    setActiveView('searchResults')
+    setActiveView('patients')
+    setSelectedPet(null) // Clear selected pet to show the filtered list
   }
 
-  const handlePetClick = (petName) => {
-    setSearchQuery(petName)
-    setActiveView('searchResults')
+  const handlePatientCatalogClick = () => {
+    setSelectedPet(null)
+    setSearchQuery('')
+    setActiveView('patients')
   }
 
   const renderPage = () => {
     switch(activeView) {
       case 'newPatient':
         return <NewPatient />
-      case 'newAppointment':
-        return <NewAppointment />
-      case 'appointments':
-        return <Appointments onPetClick={handlePetClick} />
-      case 'searchResults':
-        return <SearchResults searchQuery={searchQuery} />
-      case 'reports':
-        return <Reports />
-      case 'medications':
-        return <Medications />
+      case 'calendar':
+        return <Calendar />
       case 'patients':
-        return <Patients />
+        return <Patients 
+          selectedPet={selectedPet} 
+          setSelectedPet={setSelectedPet}
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+        />
       default:
-        return <Appointments />
+        return <Calendar />
     }
   }
 
@@ -69,6 +70,7 @@ export default function VetDashboard({ clinicName, doctorName }) {
           <QuickActions 
             activeButton={activeQuickAction} 
             onActionClick={handleQuickActionClick}
+            onPatientCatalogClick={handlePatientCatalogClick}
           />
         </div>
         <div className="dashboard-main">

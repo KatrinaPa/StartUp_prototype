@@ -17,11 +17,10 @@
 }
 
 .page-title {
-  font-size: 24px;
+  font-size: 20px;
   color: var(--text-primary);
-  margin-bottom: 2rem;
+  margin: 2rem 0;
   padding: 0 4rem;
-  text-align: left;
 }
 
 .form-section {
@@ -29,13 +28,15 @@
   margin-bottom: 1rem;
 }
 
-.form-section h2 {
-  margin: 2rem 0;
+.form-section h4 {
+  margin: 0 0 1rem 0;
   color: #333;
   text-align: left;
+  font-size: 16px;
+  font-weight: 700;
 }
 
-.form-columns {
+.two-form-columns{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
@@ -58,6 +59,12 @@
 .form-group.pet-select {
   flex: 0 0 auto;
   width: auto;
+}
+
+.form-group.pet-select label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
 }
 
 .form-group.other-pet {
@@ -132,6 +139,27 @@
   color: #333;
 }
 
+.three-form-columns {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  width: 100%;
+}
+
+.form-grid .form-group {
+  padding-bottom: 0;
+}
+
+.form-grid .form-group:only-child {
+  grid-column: 1 / -2;
+} 
+
 .new-patient-divider {
   height: 1px;
   background: var(--text-secondary);
@@ -139,7 +167,7 @@
   width: auto;
 }
 
-.form-actions {
+.form-actions-new-pet {
   display: flex;
   gap: 1rem;
   justify-content: flex-end;
@@ -173,4 +201,4 @@
 .upload-btn:hover,
 .save-btn:hover {
   opacity: 0.9;
-} 
+}

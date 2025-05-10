@@ -1,53 +1,44 @@
 import { useState } from 'react'
 import { 
   FaCalendarAlt, 
-  FaPlusCircle, 
-  FaFileExport, 
-  FaPills,
-  FaUsers 
+  FaPlusCircle,
+  FaPaw 
 } from 'react-icons/fa'
 import './quickActions.css'
 
-export default function QuickActions({ activeButton, onActionClick }) {
+export default function QuickActions({ activeButton, onActionClick, onPatientCatalogClick }) {
   const buttonClass = (buttonName) => {
     return `action-btn ${activeButton === buttonName ? 'active' : ''} ${activeButton === '' ? 'new-patient-view' : ''}`
+  }
+
+  const handlePatientsClick = () => {
+    onActionClick('patients')
+    onPatientCatalogClick?.() // Call the handler if it exists
   }
 
   return (
     <div className="quick-actions">
       <button 
-        className={buttonClass('appointments')}
-        onClick={() => onActionClick('appointments')}
+        className={buttonClass('calendar')}
+        onClick={() => onActionClick('calendar')}
       >
         <FaCalendarAlt className="button-icon" />
-        Vizītes
+        Kalendārs
       </button>
+
       <button 
-        className={buttonClass('newAppointment')}
-        onClick={() => onActionClick('newAppointment')}
+        className={buttonClass('newPatient')}
+        onClick={() => onActionClick('newPatient')}
       >
         <FaPlusCircle className="button-icon" />
-        Jauna vizīte
+        Jauns Pacients
       </button>
-      <button 
-        className={buttonClass('reports')}
-        onClick={() => onActionClick('reports')}
-      >
-        <FaFileExport className="button-icon" />
-        Atskaites
-      </button>
-      <button 
-        className={buttonClass('medications')}
-        onClick={() => onActionClick('medications')}
-      >
-        <FaPills className="button-icon" />
-        Medikamentu uzskaite
-      </button>
+
       <button 
         className={buttonClass('patients')}
-        onClick={() => onActionClick('patients')}
+        onClick={handlePatientsClick}
       >
-        <FaUsers className="button-icon" />
+        <FaPaw className="button-icon" />
         Pacientu katalogs
       </button>
     </div>
