@@ -12,7 +12,7 @@
   border-radius: 50px;
   border: none;
   text-align: left;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   cursor: pointer;
   display: flex;
@@ -34,12 +34,14 @@
   box-shadow: 1px 2px 0 rgba(0, 0, 0, 0.1);
   transform: translateY(-1px);
   opacity: 0.9;
+  font-weight: 800;
 }
 
 /* Only apply pink background if button is active AND we're not on NewPatient page */
 .action-btn.active:not(.new-patient-view) {
   background: var(--brand-pink);
   color: var(--text-dark);
+  font-weight: 800;
 }
 
 .action-btn .button-icon {

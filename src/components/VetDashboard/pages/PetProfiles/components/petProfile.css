@@ -123,18 +123,6 @@
   gap: 0.5rem;
 }
 
-.gender-icon {
-  margin-left: 0.3rem;
-}
-
-.gender-icon.female {
-  color: var(--brand-pink);
-}
-
-.gender-icon.male {
-  color: var(--brand-jade);
-}
-
 .pet-profile-divider {
   height: 1px;
   background: var(--border-light);

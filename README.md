@@ -6,7 +6,7 @@ PetMedData is a web-based veterinary practice management system built with React
 
 This project is part of a school StartUp module and is currently in development. The concept and features are undergoing idea and user validation.
 
-**[Prototype Vercel deployment!](https://petmeddataproto-4gycmxxte-katrinas-projects-ec4d6da8.vercel.app/)**
+**[Prototype Vercel deployment!](https://petmeddataproto-k2oq87k25-katrinas-projects-ec4d6da8.vercel.app/)**
 
 ## Screenshots
 

@@ -34,7 +34,7 @@
   
   .top-row {
     display: grid;
-    grid-template-columns: 65% 35%;
+    grid-template-columns: 2fr 1fr;
     gap: 1.4rem;
     align-items: start;
   }

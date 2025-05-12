@@ -9,7 +9,7 @@ export const calendarConfig = {
   showNonCurrentDates: true,
   fixedWeekCount: false,
   dayCount: 7,
-  firstDay: -3,
+  firstDay: 6, // can be checked to "5" if need to show 3 days before and after
   headerToolbar: {
     left: 'prev,next today',
     center: '',
@@ -20,10 +20,12 @@ export const calendarConfig = {
   expandRows: true,
   selectable: true,
   selectMirror: true,
-  dayMaxEvents: true,
   weekends: true,
   locale: "lv",
   allDaySlot: false,
+  displayEventEnd: true,
+  eventDisplay: "block",
+  slotEventOverlap: false,
   slotLabelFormat: {
     hour: '2-digit',
     minute: '2-digit',

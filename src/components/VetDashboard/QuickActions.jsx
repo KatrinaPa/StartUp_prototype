@@ -1,19 +1,24 @@
-import { useState } from 'react'
 import { 
   FaCalendarAlt, 
   FaPlusCircle,
-  FaPaw 
+  FaPaw,
+  FaUserPlus,
 } from 'react-icons/fa'
 import './quickActions.css'
 
-export default function QuickActions({ activeButton, onActionClick, onPatientCatalogClick }) {
+export default function QuickActions({ 
+  activeButton, 
+  onActionClick,
+  onPatientCatalogClick,
+  onNewAppointmentClick
+}) {
   const buttonClass = (buttonName) => {
     return `action-btn ${activeButton === buttonName ? 'active' : ''} ${activeButton === '' ? 'new-patient-view' : ''}`
   }
 
   const handlePatientsClick = () => {
     onActionClick('patients')
-    onPatientCatalogClick?.() // Call the handler if it exists
+    onPatientCatalogClick?.()
   }
 
   return (
@@ -24,6 +29,14 @@ export default function QuickActions({ activeButton, onActionClick, onPatientCat
       >
         <FaCalendarAlt className="button-icon" />
         Kalendārs
+      </button>
+
+      <button 
+        className={buttonClass('newAppointment')}
+        onClick={onNewAppointmentClick}
+      >
+        <FaUserPlus className="button-icon" />
+        <span>Jauna vizīte</span>
       </button>
 
       <button 

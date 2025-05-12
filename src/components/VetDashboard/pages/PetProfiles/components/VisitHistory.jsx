@@ -1,8 +1,12 @@
 import { format } from 'date-fns'
 import { lv } from 'date-fns/locale'
 import './visitHistory.css'
+import { useState } from 'react'
+import NewAppointmentModal from '../../Calendar/components/NewAppointmentModal'
 
 export default function VisitHistory({ pet }) {
+  const [showNewAppointment, setShowNewAppointment] = useState(false)
+
   const previousVisits = [
     {
       date: '2024-03-10',
@@ -35,6 +39,10 @@ export default function VisitHistory({ pet }) {
       'vaccination': 'Vakcinācija'
     }
     return labels[type]
+  }
+
+  const handleNewAppointmentClick = () => {
+    setShowNewAppointment(true)
   }
 
   return (
@@ -71,13 +79,22 @@ export default function VisitHistory({ pet }) {
 
         <button 
           className="schedule-visit-btn"
-          onClick={() => {
-            // TODO: Implement schedule visit functionality
-          }}
+          onClick={handleNewAppointmentClick}
         >
           Ieplānot vizīti
         </button>
       </div>
+
+      {showNewAppointment && (
+        <NewAppointmentModal
+          onClose={() => setShowNewAppointment(false)}
+          selectedDate={new Date()}
+          selectedTime={null}
+          setSelectedTime={() => {}}
+          selectedPetType={null}
+          setSelectedPetType={() => {}}
+        />
+      )}
     </div>
   )
 } 

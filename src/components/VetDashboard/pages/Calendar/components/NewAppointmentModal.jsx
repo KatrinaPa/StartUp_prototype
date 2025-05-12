@@ -1,7 +1,7 @@
 import { format } from 'date-fns'
 import { lv } from 'date-fns/locale'
 import { FaDog, FaCat, FaHorse } from 'react-icons/fa'
-
+import { useState } from 'react'
 export default function NewAppointmentModal({ 
   onClose,
   selectedDate,
@@ -10,6 +10,15 @@ export default function NewAppointmentModal({
   selectedPetType,
   setSelectedPetType 
 }) {
+
+  const [notificationPrefs, setNotificationPrefs] = useState({
+    smsReminder: false,
+    emailReminder: false,
+    phoneCall: false
+  })
+
+  const [petType, setPetType] = useState(selectedPetType || '')
+
   return (
     <div className="modal-overlay">
       <div className="appointment-modal">
@@ -30,8 +39,8 @@ export default function NewAppointmentModal({
 
           <div className="form-row-calendar two-columns">
             <NewPatientSection // Section for adding new patient details with pet type selection     
-              selectedPetType={selectedPetType}
-              setSelectedPetType={setSelectedPetType}
+              selectedPetType={petType}
+              setSelectedPetType={setPetType}
             />
           </div>
 
@@ -41,6 +50,45 @@ export default function NewAppointmentModal({
 
           <div className="form-row-calendar">
             <NotesSection />
+          </div>
+
+          {/* Notification preferences */}
+          <div className="notification-prefs">
+            <label className="checkbox-label">
+              <input
+                type="checkbox"
+                checked={notificationPrefs.smsReminder}
+                onChange={(e) => setNotificationPrefs(prev => ({
+                  ...prev,
+                  smsReminder: e.target.checked
+                }))}
+              />
+              <span>Nosūtīt īpašniekam atgādinājumu sms</span>
+            </label>
+
+            <label className="checkbox-label">
+              <input
+                type="checkbox"
+                checked={notificationPrefs.emailReminder}
+                onChange={(e) => setNotificationPrefs(prev => ({
+                  ...prev,
+                  emailReminder: e.target.checked
+                }))}
+              />
+              <span>Nosūtīt īpašniekam atgādinājumu epastā</span>
+            </label>
+
+            <label className="checkbox-label">
+              <input
+                type="checkbox"
+                checked={notificationPrefs.phoneCall}
+                onChange={(e) => setNotificationPrefs(prev => ({
+                  ...prev,
+                  phoneCall: e.target.checked
+                }))}
+              />
+              <span>Atgādināt īpašniekam piezvanot</span>
+            </label>
           </div>
         </div>
 
@@ -193,8 +241,11 @@ function OwnerDetailsSection() {
 function NotesSection() {
   return (
     <div className="form-group">
-      <label>Piezīmes:</label>
-      <textarea placeholder="Vizītes iemesls..."></textarea>
+      <label>Piezīmes par vizīti:</label>
+      <textarea 
+        rows="3"
+        placeholder="Piezīmes par vizīti, veicamajām procedūrām..."
+      />
     </div>
   )
 }

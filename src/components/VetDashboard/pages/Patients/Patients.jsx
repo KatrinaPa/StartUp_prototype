@@ -74,48 +74,69 @@ export default function Patients({
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="search-input-patients"
               />
-              <FaSearch 
-                className="search-icon" 
-                onClick={() => {}}
-              />
+              <FaSearch className="search-icon" onClick={() => {}} />
             </div>
           </div>
 
           <div className="patients-list">
-            {filteredPatients.length > 0 ? (
-              filteredPatients.map(patient => (
-                <div 
-                  key={patient.id} 
-                  className="patient-card"
-                  onClick={() => handlePetClick(patient)}
-                >
-                  <div className={`pet-icon ${!['dog', 'cat', 'horse'].includes(patient.petType) ? 'other-pet' : ''}`}>
-                    {getPetTypeIcon(patient.petType)}
-                  </div>
-                  <div className="pet-details">
-                    <h3>{patient.petName}</h3>
-                    <p className="breed">{patient.breed}</p>
-                  </div>
-                  <div className="owner-info">
-                    <p className="owner">{patient.ownerName}</p>
-                    <div className="visit-info">
-                      <p className="last-visit">
-                        Pēdējā vizīte: {new Date(patient.lastVisit).toLocaleDateString('lv-LV')}
-                      </p>
-                      <p className="next-visit">
-                        {patient.nextVisit 
-                          ? `Nākamā vizīte: ${new Date(patient.nextVisit).toLocaleDateString('lv-LV')}`
-                          : <span style={{ visibility: 'hidden' }}>Nākamā vizīte: </span>}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <div className="no-results">
-                <p>Nav atrasts neviens pacients</p>
-              </div>
-            )}
+            <table>
+              <thead>
+                <tr>
+                  <th>Dzīvnieks</th>
+                  <th>Vārds</th>
+                  <th>Šķirne</th>
+                  <th>Īpašnieks</th>
+                  <th>Pēdējā / Nākamā vizīte</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredPatients.length > 0 ? (
+                  filteredPatients.map(patient => (
+                    <tr 
+                      key={patient.id}
+                      className="patient-row"
+                      onClick={() => handlePetClick(patient)}
+                    >
+                      <td>
+                        <div className={`pet-icon ${!['dog', 'cat', 'horse'].includes(patient.petType) ? 'other-pet' : ''}`}>
+                          {getPetTypeIcon(patient.petType)}
+                        </div>
+                      </td>
+                      <td>{patient.petName}</td>
+                      <td>{patient.breed}</td>
+                      <td>{patient.ownerName}</td>
+                      <td>
+                        <div className="visit-info">
+                          <p className="last-visit">
+                            {new Date(patient.lastVisit).toLocaleDateString('lv-LV')}
+                          </p>
+                          {patient.nextVisit && (
+                            <p className="next-visit">
+                              {new Date(patient.nextVisit).toLocaleDateString('lv-LV')}
+                            </p>
+                          )}
+                        </div>
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="5" className="no-results">
+                      <p>Nav atrasts neviens pacients</p>
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+            
+            <div className="pagination">
+              <button className="page-number active">1</button>
+              <button className="page-number">2</button>
+              <button className="page-number">3</button>
+              <span className="page-ellipsis">...</span>
+              <button className="page-number">11</button>
+              <button className="page-number">12</button>
+            </div>
           </div>
         </>
       )}

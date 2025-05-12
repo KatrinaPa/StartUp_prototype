@@ -5,13 +5,13 @@ import NavbarVets from './NavbarVets'
 import NewPatient from './pages/NewPatient/NewPatient'
 import Patients from './pages/Patients/Patients'
 import Calendar from './pages/Calendar/Calendar'
-import { patients } from './pages/Patients/patientsData'
 
 export default function VetDashboard({ clinicName, doctorName }) {
   const [activeView, setActiveView] = useState('calendar')
   const [activeQuickAction, setActiveQuickAction] = useState('calendar')
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedPet, setSelectedPet] = useState(null)
+  const [showNewAppointment, setShowNewAppointment] = useState(false)
 
   const handleQuickActionClick = (view) => {
     setActiveView(view)
@@ -39,12 +39,21 @@ export default function VetDashboard({ clinicName, doctorName }) {
     setActiveView('patients')
   }
 
+  const handleNewAppointmentClick = () => {
+    setActiveView('calendar')
+    setActiveQuickAction('calendar')
+    setShowNewAppointment(true)
+  }
+
   const renderPage = () => {
     switch(activeView) {
       case 'newPatient':
         return <NewPatient />
       case 'calendar':
-        return <Calendar />
+        return <Calendar 
+          showNewAppointment={showNewAppointment}
+          setShowNewAppointment={setShowNewAppointment}
+        />
       case 'patients':
         return <Patients 
           selectedPet={selectedPet} 
@@ -71,6 +80,7 @@ export default function VetDashboard({ clinicName, doctorName }) {
             activeButton={activeQuickAction} 
             onActionClick={handleQuickActionClick}
             onPatientCatalogClick={handlePatientCatalogClick}
+            onNewAppointmentClick={handleNewAppointmentClick}
           />
         </div>
         <div className="dashboard-main">

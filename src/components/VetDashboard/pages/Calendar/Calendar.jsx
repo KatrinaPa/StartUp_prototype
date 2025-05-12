@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import FullCalendar from '@fullcalendar/react'
 import { format } from 'date-fns'
 import { calendarConfig } from './config/calendarConfig'
@@ -8,7 +8,7 @@ import AppointmentDetailsModal from './components/AppointmentDetailsModal'
 import { getDemoEvents } from './data/demoEvents'
 import './calendar.css'
 
-export default function Calendar() {
+export default function Calendar({ showNewAppointment, setShowNewAppointment }) {
     // Controls visibility of the new appointment modal:
     const [showNewAppointmentModal, setShowNewAppointmentModal] = useState(false)
     // Controls visibility of the appointment details modal:
@@ -20,6 +20,16 @@ export default function Calendar() {
     const [selectedAppointment, setSelectedAppointment] = useState(null)
     const [currentView, setCurrentView] = useState('timeGridWeek')
     const [currentDate, setCurrentDate] = useState(new Date())
+
+    useEffect(() => {
+        if (showNewAppointment) {
+            const now = new Date()
+            setSelectedDate(now)
+            setSelectedTime(format(now, 'HH:mm'))
+            setShowNewAppointmentModal(true)
+            setShowNewAppointment(false)
+        }
+    }, [showNewAppointment, setShowNewAppointment])
 
     // Handles when user selects a time slot to create new appointment and sets the selected date and time:
     const handleDateSelect = (selectInfo) => {
@@ -41,45 +51,45 @@ export default function Calendar() {
 
     return (
         <div className="calendar-page-wrapper">
-        <div className="calendar-page">
-            <CalendarHeader 
-                currentView={currentView}
-                currentDate={currentDate}
-            />
-            
-            <div className="calendar-container">
-            <FullCalendar
-                {...calendarConfig}
-                events={getDemoEvents(new Date())}
-                select={handleDateSelect}
-                eventClick={handleEventClick}
-                datesSet={handleViewChange}
-            />
+            <div className="calendar-page">
+                <CalendarHeader 
+                    currentView={currentView}
+                    currentDate={currentDate}
+                />
+                
+                <div className="calendar-container">
+                    <FullCalendar
+                        {...calendarConfig}
+                        events={getDemoEvents(new Date())}
+                        select={handleDateSelect}
+                        eventClick={handleEventClick}
+                        datesSet={handleViewChange}
+                    />
+                </div>
+
+                {/* Modal for creating new appointment */}
+                {showNewAppointmentModal && (
+                    <NewAppointmentModal
+                        onClose={() => setShowNewAppointmentModal(false)}
+                        selectedDate={selectedDate}
+                        selectedTime={selectedTime}
+                        setSelectedTime={setSelectedTime}
+                        selectedPetType={selectedPetType}
+                        setSelectedPetType={setSelectedPetType}
+                    />
+                )}
+
+                {/* Modal for viewing/editing existing appointment */}
+                {showDetailsModal && selectedAppointment && (
+                    <AppointmentDetailsModal
+                        appointment={selectedAppointment}
+                        onClose={() => {
+                            setShowDetailsModal(false)
+                            setSelectedAppointment(null)
+                        }}
+                    />
+                )}
             </div>
-
-            {/* Modal for creating new appointment */}
-            {showNewAppointmentModal && (
-            <NewAppointmentModal
-                onClose={() => setShowNewAppointmentModal(false)}
-                selectedDate={selectedDate}
-                selectedTime={selectedTime}
-                setSelectedTime={setSelectedTime}
-                selectedPetType={selectedPetType}
-                setSelectedPetType={setSelectedPetType}
-            />
-            )}
-
-            {/* Modal for viewing/editing existing appointment */}
-            {showDetailsModal && selectedAppointment && (
-            <AppointmentDetailsModal
-                appointment={selectedAppointment}
-                onClose={() => {
-                setShowDetailsModal(false)
-                setSelectedAppointment(null)
-                }}
-            />
-            )}
-        </div>
         </div>
     )
 } 
