@@ -1,5 +1,6 @@
 import { format } from 'date-fns'
 import { lv } from 'date-fns/locale'
+import { FaEdit } from 'react-icons/fa'
 import './visitHistory.css'
 import { useState } from 'react'
 import NewAppointmentModal from '../../Calendar/components/NewAppointmentModal'
@@ -13,32 +14,35 @@ export default function VisitHistory({ pet }) {
       time: '14:30',
       reason: 'Vakcinācija',
       vet: 'Dr. Anna Kļaviņa',
-      examinations: ['vaccination']
+      examinations: ['blood-test', 'usg']
     },
     {
       date: '2024-02-15',
       time: '10:00',
       reason: 'Profilaktiskā pārbaude',
       vet: 'Dr. Anna Kļaviņa',
-      examinations: ['blood-test', 'usg']
+      examinations: ['vaccination'] 
     },
     {
       date: '2024-01-20',
       time: '16:45',
       reason: 'Ķirurģiska operācija',
       vet: 'Dr. Pēteris Ozols',
-      examinations: ['rtg', 'blood-test']
+      examinations: ['general', 'rtg', 'blood-test']
     }
   ]
 
+  const nextVisitDate = '2025-06-17' // This should come from props or API
+
   const getExaminationLabel = (type) => {
     const labels = {
-      'blood-test': 'Asins Analīzes',
+      'blood-test': 'Asins analīzes',
       'usg': 'USG',
       'rtg': 'RTG',
-      'vaccination': 'Vakcinācija'
+      'vaccination': 'Vakcinācija',
+      'general': 'Vispārēja apskate'
     }
-    return labels[type]
+    return labels[type] || type
   }
 
   const handleNewAppointmentClick = () => {
@@ -46,44 +50,56 @@ export default function VisitHistory({ pet }) {
   }
 
   return (
-    <div className="pet-history">
-      <div className="history-content">
-        <h2>Iepriekšējās vizītes</h2>
-        
-        <div className="visits-list">
+    <div className="visits-history">
+      <div className="visits-history-table">
+      <h3>Iepriekšējās vizītes:</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Datums</th>
+            <th>Mērķis</th>
+            <th>Izmeklējumi</th>
+          </tr>
+        </thead>
+        <tbody>
           {previousVisits.map((visit, index) => (
-            <div key={index} className="visit-card">
-              <div className="visit-info-wrapper">
-                <div className="visit-header">
-                  <div className="visit-date">
-                    {format(new Date(visit.date), 'd. MMMM yyyy', { locale: lv })}
-                  </div>
-                  <div className="visit-time">{visit.time}</div>
+            <tr key={index} className="visit-row">
+              <td>
+                {format(new Date(visit.date), 'dd.MM.yyyy', { locale: lv })}
+              </td>
+              <td>{visit.reason}</td>
+              <td>
+                <div className="examination-tags">
+                  {visit.examinations.map((exam, i) => (
+                    <span key={i} className={`examination-tag ${exam}`}>
+                      {getExaminationLabel(exam)}
+                    </span>
+                  ))}
                 </div>
-                <div className="visit-details">
-                  <div className="visit-reason">{visit.reason}</div>
-                  <div className="visit-vet">{visit.vet}</div>
-                </div>
-              </div>
-              <hr className="visit-card-divider" />
-              <div className="visit-examinations">
-                {visit.examinations.map((exam, i) => (
-                  <span key={i} className={`examination-tag ${exam}`}>
-                    {getExaminationLabel(exam)}
-                  </span>
-                ))}
-              </div>
-            </div>
+              </td>
+            </tr>
           ))}
-        </div>
+        </tbody>
+      </table>
 
-        <button 
-          className="schedule-visit-btn"
-          onClick={handleNewAppointmentClick}
-        >
-          Ieplānot vizīti
+      </div>
+
+      <div className="next-visit-info">
+        <div className="next-visit-date">
+          <span>Nākamā vizīte:</span>
+          {format(new Date(nextVisitDate), 'dd.MM.yyyy', { locale: lv })}
+        </div>
+        <button className="edit-next-visit" aria-label="Rediģēt nākamo vizīti">
+          <FaEdit />
         </button>
       </div>
+
+      <button 
+        className="schedule-visit-btn"
+        onClick={handleNewAppointmentClick}
+      >
+        Ieplānot vizīti
+      </button>
 
       {showNewAppointment && (
         <NewAppointmentModal

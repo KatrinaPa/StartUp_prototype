@@ -28,7 +28,7 @@ export default function QuickActions({
         onClick={() => onActionClick('calendar')}
       >
         <FaCalendarAlt className="button-icon" />
-        Kalendārs
+        Vizīšu Kalendārs
       </button>
 
       <button 
@@ -36,7 +36,7 @@ export default function QuickActions({
         onClick={onNewAppointmentClick}
       >
         <FaUserPlus className="button-icon" />
-        <span>Jauna vizīte</span>
+        <span>Jauna Vizīte</span>
       </button>
 
       <button 
@@ -52,7 +52,7 @@ export default function QuickActions({
         onClick={handlePatientsClick}
       >
         <FaPaw className="button-icon" />
-        Pacientu katalogs
+        Pacientu Katalogs
       </button>
     </div>
   )

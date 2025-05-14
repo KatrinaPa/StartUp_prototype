@@ -37,7 +37,7 @@ export const getDemoEvents = (currentDate) => {
     {
       patientIndex: 3,
       startHour: 10,
-      startMinute: 15,
+      startMinute: 30,
       daysOffset: -1,
       reason: 'Vakcinācija',
       vet: 'Dr. Anna Kļaviņa'
@@ -62,7 +62,7 @@ export const getDemoEvents = (currentDate) => {
     // Today's Events (4 events)
     {
       patientIndex: 6,
-      startHour: 9,
+      startHour: 8,
       startMinute: 30,
       daysOffset: 0,
       reason: 'Vakcinācija',
@@ -70,7 +70,7 @@ export const getDemoEvents = (currentDate) => {
     },
     {
       patientIndex: 7,
-      startHour: 11,
+      startHour: 10,
       startMinute: 0,
       daysOffset: 0,
       reason: 'Profilaktiskā pārbaude',
@@ -78,7 +78,7 @@ export const getDemoEvents = (currentDate) => {
     },
     {
       patientIndex: 8,
-      startHour: 14,
+      startHour: 11,
       startMinute: 30,
       daysOffset: 0,
       reason: 'Ķirurģiska operācija',
@@ -86,7 +86,7 @@ export const getDemoEvents = (currentDate) => {
     },
     {
       patientIndex: 9,
-      startHour: 11,
+      startHour: 10,
       startMinute: 0,
       daysOffset: 0,
       reason: 'Vakcinācija',
@@ -104,7 +104,7 @@ export const getDemoEvents = (currentDate) => {
     },
     {
       patientIndex: 11,
-      startHour: 13,
+      startHour: 8,
       startMinute: 30,
       daysOffset: 1,
       reason: 'Vakcinācija',
@@ -112,8 +112,8 @@ export const getDemoEvents = (currentDate) => {
     },
     {
       patientIndex: 12,
-      startHour: 9,
-      startMinute: 15,
+      startHour: 8,
+      startMinute: 0,
       daysOffset: 2,
       reason: 'Ķirurģiska operācija',
       vet: 'Dr. Anna Kļaviņa'
@@ -136,8 +136,8 @@ export const getDemoEvents = (currentDate) => {
     },
     {
       patientIndex: 15,
-      startHour: 8,
-      startMinute: 15,
+      startHour: 9,
+      startMinute: 30,
       daysOffset: 3,
       reason: 'Ķirurģiska operācija',
       vet: 'Dr. Pēteris Ozols'

@@ -110,7 +110,7 @@ export default function VisitProtocol({ pet }) {
               </div>
               <div className="examination-buttons">
                 <button className="examination-btn blood-test">
-                  Asins Analīzes
+                  Asins analīzes
                 </button>
                 <button className="examination-btn usg">
                   USG
@@ -120,6 +120,9 @@ export default function VisitProtocol({ pet }) {
                 </button>
                 <button className="examination-btn vaccination">
                   Vakcinācija
+                </button>
+                <button className="examination-btn general">
+                  Vispārēja apskate
                 </button>
               </div>
             </div>

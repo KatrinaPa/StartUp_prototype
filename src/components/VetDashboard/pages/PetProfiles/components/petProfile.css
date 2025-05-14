@@ -123,12 +123,6 @@
   gap: 0.5rem;
 }
 
-.pet-profile-divider {
-  height: 1px;
-  background: var(--border-light);
-  margin: 1rem 0;
-}
-
 .owner-section h3,
 .visits-section h3,
 .vaccines-info h3 {
@@ -147,11 +141,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
-}
-
-.next-visit-date {
-  color: var(--brand-pink) !important;
-  font-weight: 500;
 }
 
 .vaccine-item {

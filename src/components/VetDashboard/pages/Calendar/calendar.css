@@ -32,18 +32,6 @@
   margin: 0;
 }
 
-.search-input-patients {
-  width: 100%;
-  padding: 0.8rem 1rem;
-  padding-left: 2.5rem;
-  border: 1px solid var(--border-light);
-  border-radius: 50px;
-  font-size: 14px;
-  color: var(--text-primary);
-  background: var(--bg-white);
-  transition: all 0.2s ease;
-}
-
 .calendar-filters select {
   padding: 0.6rem 1rem;
   border: 1px solid var(--border-light);
@@ -84,29 +72,28 @@
 
 .fc .fc-toolbar-title {
   font-size: 1.2em;
-  color: var(--text-primary);
 }
 
 .fc .fc-button {
   background: var(--brand-jade);
+  opacity: 0.50;
   border: none;
   border-radius: 50px;
   padding: 0.5rem 1rem;
-  color: var(--text-dark);
   font-family: 'Roboto', sans-serif;
 }
 
 .fc .fc-button-primary:not(:disabled).fc-button-active,
 .fc .fc-button-primary:not(:disabled):active {
   background: var(--brand-pink);
+  opacity: 1;
   color: var(--text-dark);
   font-weight: 700;
 }
 
 .fc .fc-button:hover {
-  background: var(--brand-pink);
-  opacity: 0.50;
-  color: var(--text-primary);
+  background: var(--brand-jade);
+  opacity: 1;
 }
 
 /* Keep active button at full opacity */
@@ -116,7 +103,7 @@
 }
 
 .fc .fc-button-primary:disabled {
-  color: var(--text-dark);  /* Override default disabled color */
+  color: var(--text-dark);
 }
 
 .fc-day-today {
@@ -124,7 +111,6 @@
 }
 
 .fc-event {
-  background: var(--brand-pink);
   border: none;
   border-radius: 6px;
   padding: 4px 8px;
@@ -133,6 +119,19 @@
 .fc-v-event .fc-event-main-frame {
   padding: 3px 4px !important;
   line-height: 1.5 !important;
+}
+
+.fc-v-event .fc-event-main {
+  /* Remove this line as it's setting all events to dark text */
+  /* color: var(--text-dark); */
+}
+
+.fc-v-event .fc-event-main .today-event {
+  color: var(--text-light) !important;
+}
+
+.fc-h-event .fc-event-main {
+  color: var(--text-dark);
 }
 
 .fc-event-title {
@@ -149,34 +148,46 @@
   line-height: 1;
 }
 
-/* Past events */
-.past-event {
-  background-color: var(--text-secondary) !important;
+/* Style today's events */
+.today-event,
+.fc-v-event.today-event .fc-event-main,
+.fc-h-event.today-event .fc-event-main {
+  background-color: var(--brand-jade);
+  opacity: 0.6;
+  color: var(--text-light) !important;
+}
+
+.today-event:hover,
+.fc-v-event.today-event .fc-event-main,
+.fc-h-event.today-event .fc-event-main {
+  opacity: 1;
+}
+
+/* Style past events */
+.past-event,
+.fc-v-event.past-event .fc-event-main,
+.fc-h-event.past-event .fc-event-main {
+  background-color: var(--bg-light-grey);
   opacity: 0.7;
+  color: var(--text-dark);
 }
 
-/* Today's events */
-.today-event {
-  background-color: var(--brand-jade) !important;
-}
-
-/* Future events */
-.future-event {
-  background-color: var(--brand-pink) !important;
+/* Style future events */
+.future-event,
+.fc-v-event.future-event .fc-event-main,
+.fc-h-event.future-event .fc-event-main {
+  background-color: var(--brand-pink);
+  opacity: 0.7;
+  color: var(--text-dark);
 }
 
 /* Hover effect for all events */
 .fc-event:hover {
-  opacity: 0.9;
+  opacity: 1;
   cursor: pointer;
 }
 
 .fc a {
-  color: var(--text-primary);
-   text-decoration: none;
-}
-  
-.fc a:hover {
   color: var(--text-dark);
   text-decoration: none;
 }
@@ -184,14 +195,12 @@
 /* Style for Today button */
 .fc .fc-today-button {
   background: var(--brand-pink) !important;
-  color: var(--text-dark);
   font-weight: 700;
 }
   
 .fc .fc-today-button:hover {
-  background: var(--brand-jade) !important;
+  background: var(--brand-jade-light) !important;
   opacity: 1;
-  color: var(--text-dark);
   font-weight: 700;
 }
 
@@ -387,21 +396,24 @@
   height: 45px;
   border: none;
   border-radius: 50%;
-  background: var(--brand-yellow);
-  color: var(--text-dark);
+  background: var(--brand-jade);
+  color: var(--bg-white);
   cursor: pointer;
-  transition: all 0.2s ease;
-  padding: 10px;  /* Add padding to control icon size */
-  font-size: 25px;  /* Control icon size through font-size */
+  opacity: 0.6;
+  padding: 10px;
+  font-size: 25px;
 }
 
 .pet-type-btn:hover {
-  opacity: 0.8;
+  opacity: 1;
+  transition: all 0.2s ease;
+  transform: scale(1.05);
 }
 
 .pet-type-btn.active {
-  background: var(--brand-pink);
-}
+  background: var(--brand-jade);
+  outline: none;
+}   
 
 .other-pet-input {
   height: 40px;

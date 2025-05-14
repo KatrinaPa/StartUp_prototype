@@ -40,7 +40,7 @@
 }
 
 .nav-btn:nth-child(3) {
-  background-color: var(--brand-jade);
+  background-color: var(--brand-jade-light);
 }
 
 .nav-btn:nth-child(4) {

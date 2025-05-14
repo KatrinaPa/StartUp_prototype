@@ -4,16 +4,14 @@
   /* Main Background Colors */
   --bg-primary: #fff9f2;      /* Main app background */
   --bg-white: #ffffff;        /* White backgrounds */
-  --bg-lighter-grey: #F3F6F1;   /* Lighter grey backgrounds */
-  --bg-light-grey: #dcdedf;   /* Light grey backgrounds */
+  --bg-lighter-grey: #ecf1ee;   /* Lighter grey backgrounds #F3F6F1*/
+  --bg-light-grey: #b4b3b3;   /* Light grey backgrounds */
   --bg-input: #fce9e8;        /* Input fields background */
   
   /* Brand Colors */
-  --brand-yellow: #FFDE5B;    /* Logo circle, icons */
+  --brand-jade: #198185;    /* Logo circle, icons yellow #ffde5b */
   --brand-pink: #ffb3b3;      /* Buttons, user info */
-  --brand-brown:#af7979;
-  --brand-jade: #b0d6d6;      /* Buttons, user info */
-  
+  --brand-jade-light: #b0d6d6;      /* Buttons, user info */
   /* Text Colors */
   --text-primary: #333333;    /* Main text color */
   --text-secondary: #666666;  /* Secondary text, labels */

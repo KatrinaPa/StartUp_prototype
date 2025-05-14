@@ -1,94 +1,3 @@
-.pet-history {
-    background: var(--bg-white);
-    border-radius: 24px;
-    padding: 1.5rem 2rem;
-}
-
-.history-content {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-}
-
-.history-content h2 {
-    color: var(--text-primary);
-    font-size: 16px;
-    text-align: left;
-    margin: 0;
-}
-
-.visits-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.visit-card {
-    background: var(--bg-lighter-grey);
-    border-radius: 12px;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.visit-card:hover {
-    box-shadow: 1px 2px 0 rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-}
-
-.visit-info-wrapper {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 2rem;
-    align-items: start;
-}
-
-.visit-header {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    text-align: left;
-}
-
-.visit-details {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    text-align: right;
-}
-
-.visit-date {
-    color: var(--text-primary);
-    font-weight: 700;
-    font-size: 12px;
-}
-
-.visit-time {
-    color: var(--text-secondary);
-    font-size: 12px;
-}
-
-.visit-reason {
-    color: var(--text-primary);
-    font-weight: 500;
-    font-size: 12px;
-}
-
-.visit-vet {
-    color: var(--text-secondary);
-    font-size: 12px;
-}
-
-.visit-card-divider {
-    border: none;
-    height: 1px;
-    background: var(--text-secondary);
-    margin: 0.5rem 0;
-    width: 100%;
-    opacity: 0.5;
-}
-
 .schedule-visit-btn {
     padding: 0.8rem 1.5rem;
     border: none;
@@ -99,23 +8,13 @@
     cursor: pointer;
     transition: all 0.2s ease;
     align-self: flex-end;
-    border: none;
+    margin-top: 1rem;
 }
 
 .schedule-visit-btn:hover {
     opacity: 0.9;
     box-shadow: 1px 2px 0 rgba(0, 0, 0, 0.1);
     transform: translateY(-2px);
-}
-
-.schedule-visit-btn:focus {
-    outline: none;
-}
-
-.visit-examinations {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
 }
 
 .examination-tag {
@@ -127,17 +26,140 @@
 }
 
 .examination-tag.blood-test {
-    background: #ffd6e9;
+    background: #f8f2a1;
 }
 
 .examination-tag.usg {
-    background: #dbf2b5;
+    background: #c2f5a4e3;
 }
 
 .examination-tag.rtg {
-    background: #c2dffb;
+    background: #a9d8f9f0;
 }
 
 .examination-tag.vaccination {
-    background: #ffe2b3;
+    background: #fdb66a;
+}
+
+.examination-tag.general {
+    background: #dacefc;
+}
+
+.visits-history {
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
+}
+
+.visits-history h3 {
+    color: var(--text-secondary);
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    text-align: left;
+    padding: 2rem 1rem 0 1rem;
+}
+
+.visits-history-table {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: var(--bg-white);
+    border-radius: 24px;
+}
+
+.visits-history table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background: var(--bg-white);
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.visits-history thead th {
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--text-secondary);
+    padding: 0.5rem 0;
+}
+
+.visits-history th:nth-child(1) {
+    width: 3cqh;
+    padding-left: 1rem;
+}
+
+.visits-history th:nth-child(2) {
+    width: 35%;
+}
+
+.visits-history th:nth-child(3) {
+    width: 35%;
+}
+
+.visit-row td {
+    padding: 0.5rem 0.2rem 0.5rem 0;
+    text-align: left;
+    color: var(--text-primary);
+    font-size: 12px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.visit-row td:first-child {
+    padding-left: 1rem;
+}
+
+.visit-row:last-child td {
+    border-bottom: none;
+}
+
+.visit-row:hover {
+    background-color: var(--bg-lighter-grey);
+}
+
+.examination-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+}
+
+.next-visit-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-top: 1rem;
+    background: var(--bg-white);
+    border-radius: 24px;
+}
+
+.next-visit-date {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--brand-pink);
+}
+
+.next-visit-date span {
+    color: var(--text-secondary);
+    margin-right: 0.5rem;
+}
+
+.edit-next-visit {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.3rem;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+.edit-next-visit:focus,
+.edit-next-visit:hover {
+    color: var(--brand-pink);
+    outline: none;
 }

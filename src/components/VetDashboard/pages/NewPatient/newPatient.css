@@ -10,7 +10,6 @@
 .form-container {
   border-radius: 24px;
   width: 100%;
-  max-width: 1000px;
   margin: 2rem 5rem;
   padding: 0;
   background-color: var(--bg-lighter-grey);
@@ -111,24 +110,26 @@
 .icon-wrapper {
   width: 44px;
   height: 44px;
-  background-color: var(--brand-yellow);
+  background-color: var(--brand-jade);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: transform 0.2s;
+  opacity: 0.6;
 }
 
 .icon-wrapper:hover {
   transform: scale(1.05);
+  transition: all 0.2s ease;
+  opacity: 1;
 }
 
 .icon-wrapper svg {
   width: 30px;
   height: auto;
-  color: var(--text-primary);
-  opacity: 0.8;
+  color: var(--bg-white);
 }
 
 .icon-wrapper .cat-icon {
@@ -189,7 +190,7 @@
 }
 
 .upload-btn {
-  background: var(--brand-jade);
+  background: var(--brand-jade-light);
   color: var(--grey-dark);
 }
 

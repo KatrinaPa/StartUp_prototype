@@ -28,7 +28,7 @@
   width: 80%;
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 4rem;
   margin-left: 2rem;
 }
 
@@ -36,7 +36,7 @@
   position: relative;
   width: 56px;
   height: 56px;
-  background-color: var(--brand-yellow);
+  background-color: var(--brand-jade);
   border-radius: 50%;
   
 }
@@ -85,7 +85,7 @@
 
 .search-input:focus {
   outline: none;
-  border-color: var(--brand-jade);
+  border-color: var(--brand-jade-light);
 }
 
 .search-buttons {
@@ -124,7 +124,7 @@
   flex: 0 0 auto;
   padding: 1rem 1rem;
   border-radius: 50px;
-  background-color: var(--brand-jade);
+  background-color: var(--brand-jade-light);
   color: var(--text-dark);
   cursor: pointer;
   display: flex;
@@ -150,9 +150,9 @@
   display: flex;
   align-items: center;
   position: relative;
-  padding: 0.2rem 1rem;
+  padding: 0.35rem 1rem;
   border-radius: 50px;
-  background-color: var(--brand-yellow);
+  background-color: var(--brand-jade);
   color: #49454F;
 }
 
@@ -163,12 +163,12 @@
 }
 
 .clinic-name {
-  color: #333;
+  color: var(--bg-white);
   font-size: 12px;
 }
 
 .doctor-name {
-  color: #333;
+  color: var(--bg-white);
   font-size: 14px;
   font-weight: 700;
 }
@@ -210,7 +210,7 @@
   position: absolute;
   top: 20px;
   right: -4px;
-  background-color: var(--brand-yellow);
+  background-color: var(--brand-jade);
   color: var(--text-dark);
   border-radius: 50%;
   padding: 3px 6px;
@@ -220,7 +220,7 @@
 .logout-btn {
   margin-right: 10px;
   background-color: var(--bg-white);
-  color: var(--text-dark);
+  color: var(--brand-jade);
   border-radius: 50%;
   width: 25px;
   height: 25px;
