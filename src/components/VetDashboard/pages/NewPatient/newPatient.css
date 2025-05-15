@@ -187,11 +187,27 @@
   align-items: center;
   gap: 0.5rem;
   justify-content: center;
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
 }
 
 .upload-btn {
-  background: var(--brand-jade-light);
-  color: var(--grey-dark);
+  background: var(--bg-white);
+  color: var(--text-primary);
+  border: 2px solid var(--brand-jade);
+  transition: all 0.2s ease;
+}
+
+.upload-btn:hover,
+.upload-btn:active,
+.upload-btn:focus,
+.upload-btn:focus-visible {
+  background: var(--brand-jade);
+  color: var(--text-light);
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: var(--brand-jade) !important;
 }
 
 .save-btn {
@@ -202,4 +218,5 @@
 .upload-btn:hover,
 .save-btn:hover {
   opacity: 0.9;
+  outline: none;
 }

@@ -26,23 +26,23 @@
 }
 
 .examination-tag.blood-test {
-    background: #f8f2a1;
+    background: #facfe1;
 }
 
 .examination-tag.usg {
-    background: #c2f5a4e3;
+    background: #ddfeaa;
 }
 
 .examination-tag.rtg {
-    background: #a9d8f9f0;
+    background: #a9d8f9;
 }
 
 .examination-tag.vaccination {
-    background: #fdb66a;
+    background: #dacefc;
 }
 
 .examination-tag.general {
-    background: #dacefc;
+    background: var(--brand-jade-light);
 }
 
 .visits-history {
@@ -103,7 +103,7 @@
     padding: 0.5rem 0.2rem 0.5rem 0;
     text-align: left;
     color: var(--text-primary);
-    font-size: 12px;
+    font-size: 14px;
     border-bottom: 1px solid var(--border-light);
 }
 
@@ -123,6 +123,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.2rem;
+    margin: 0.5rem 0;
 }
 
 .next-visit-info {
@@ -130,13 +131,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    margin-top: 1rem;
+    margin-top: 0.8rem;
     background: var(--bg-white);
-    border-radius: 24px;
+    border-radius: 0 0 24px 24px;
 }
 
 .next-visit-date {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     color: var(--brand-pink);
 }
@@ -144,6 +145,7 @@
 .next-visit-date span {
     color: var(--text-secondary);
     margin-right: 0.5rem;
+    font-size: 16px;
 }
 
 .edit-next-visit {

@@ -14,19 +14,15 @@
   --brand-jade-light: #b0d6d6;      /* Buttons, user info */
   /* Text Colors */
   --text-primary: #333333;    /* Main text color */
-  --text-secondary: #666666;  /* Secondary text, labels */
   --text-dark: #49454F;       /* Dark text on light backgrounds */
+  --text-secondary: #666666;  /* Secondary text, labels */
   --text-light: #ffffff;       /* Light text on dark backgrounds */
   
   /* Border Colors */
-  --border-light: #E0E0E0;    /* Light borders */
-  --border-input: #dddddd;    /* Input borders */
+  --border-light: #d8d6d6;    /* Light borders */
   
   /* Status Colors */
   --status-red: #ff4444;      /* Notifications, errors */
-  
-  /* Shadow */
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
   
   /* Button Colors */
   --btn-vet: #FFE5D9;        /* Vet button specific */

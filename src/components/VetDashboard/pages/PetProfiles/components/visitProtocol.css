@@ -37,12 +37,18 @@
 }
 
 .measurements-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     background: var(--bg-lighter-grey);
     padding: 1rem;
     border-radius: 12px;
+}
+
+.measurements-wrapper {
     display: flex;
-    gap: 1rem;
-    justify-content: space-between;
+    flex-direction: row;
+    gap: 2rem;
 }
 
 .measurement-group {
@@ -63,7 +69,100 @@
     border: 1px solid var(--border-light);
     border-radius: 8px;
     font-size: 12px;
-    
+}
+
+.examinations-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1rem;
+    border-top: 1px solid var(--border-light);
+}
+
+.examinations-header {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.examination-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.examination-btn {
+    padding: 0.8rem 1.2rem;
+    border: 2px solid;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: var(--bg-white);
+    outline: none;
+}
+
+.examination-btn:hover,
+.examination-btn:focus,
+.examination-btn:active {
+    outline: none;
+}
+
+.examination-btn.blood-test {
+    border-color: #facfe1;
+    color: var(--text-primary);
+}
+
+.examination-btn.blood-test.active,
+.examination-btn.blood-test:hover,
+.examination-btn.blood-test:active {
+    background: #facfe1;
+}
+
+.examination-btn.usg {
+    border-color: #ddfeaa;
+    color: var(--text-primary);
+}
+
+.examination-btn.usg.active,
+.examination-btn.usg:hover,
+.examination-btn.usg:active {
+    background: #ddfeaa;
+}
+
+.examination-btn.rtg {
+    border-color: #a9d8f9;
+    color: var(--text-primary);
+}
+
+.examination-btn.rtg.active,
+.examination-btn.rtg:hover,
+.examination-btn.rtg:active {
+    background: #a9d8f9;
+}
+
+.examination-btn.vaccination {
+    border-color: #dacefc;
+    color: var(--text-primary);
+}
+
+.examination-btn.vaccination.active,
+.examination-btn.vaccination:hover,
+.examination-btn.vaccination:active {
+    background: #dacefc;
+}
+
+.examination-btn.general {
+    border-color: var(--brand-jade-light);
+    color: var(--text-primary);
+}
+
+.examination-btn.general.active,
+.examination-btn.general:hover,
+.examination-btn.general:active {
+    background: var(--brand-jade-light);
 }
 
 .protocol-sections-row {
@@ -108,6 +207,7 @@
     display: flex;
     gap: 1rem;
     justify-content: flex-end;
+    margin-top: 1rem;
 }
 
 .upload-btn,
@@ -117,13 +217,30 @@
     padding: 0.8rem 1.5rem;
     font-size: 14px;
     cursor: pointer;
-    outline: none;
+    outline: none !important;
     transition: all 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
 }
 
 .upload-btn {
-    background: var(--brand-jade-light);
-    color: var(--text-dark);
+    background: var(--bg-white);
+    color: var(--text-primary);
+    border: 2px solid var(--brand-jade);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.upload-btn:hover,
+.upload-btn:active,
+.upload-btn:focus,
+.upload-btn:focus-visible {
+    background: var(--brand-jade);
+    color: var(--text-light);
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: var(--brand-jade) !important;
 }
 
 .save-btn {
@@ -136,57 +253,7 @@
     opacity: 0.9;
     box-shadow: 1px 2px 0 rgba(0, 0, 0, 0.1);
     transform: translateY(-2px);
-}
-
-.examinations-wrapper {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
-    align-items: center;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border-light);
-}
-
-.examinations-header {
-    color: var(--text-secondary);
-    font-size: 14px;
-}
-
-.examination-buttons {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.examination-btn {
-    padding: 0.3rem 0.8rem;
-    border: none;
-    border-radius: 50px;
-    font-size: 10px;
-    font-weight: 500;
-    color: var(--text-dark);
-    cursor: pointer;
     outline: none;
-}
-
-.examination-btn.blood-test {
-    background: #f8f2a1;
-}
-
-.examination-btn.usg {
-    background: #c2f5a4e3;
-}
-
-.examination-btn.rtg {
-    background: #a9d8f9f0;
-}
-
-.examination-btn.vaccination {
-    background: #f7c187;
-}
-
-.examination-btn.general {
-    background: #dacefc;
 }
 
 .medications-section {
@@ -283,4 +350,120 @@
 
 .med-method-select:hover {
     border-color: var(--border-dark);
+}
+
+/* Vaccination section */
+.vaccination-section {
+    margin-top: 1rem;
+}
+
+.vaccination-form {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.vaccination-inputs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    width: 100%;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.vaccination-inputs:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.vaccination-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    align-self: stretch;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.add-more-vaccines-btn {
+    background: var(--bg-white);
+    border: 2px solid transparent;
+    border-radius: 50px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0.6rem 1.5rem;
+}
+
+.add-more-vaccines-btn:hover {
+    border-color: var(--brand-jade);
+    color: var(--text-primary);
+}
+
+.vaccination-inputs label {
+    color: var(--text-secondary);
+    font-size: 14px;
+    text-align: left;
+}
+
+.vaccination-inputs input {
+    padding: 0.8rem;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    font-size: 12px;
+    width: 100%;
+}
+
+.add-vaccine-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    background: var(--brand-jade);
+    color: var(--text-light);
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    height: fit-content;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.add-vaccine-btn:hover,
+.add-vaccine-btn:active {
+    opacity: 1;
+}
+
+.examination-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.examination-tag {
+    padding: 0.3rem 0.6rem;
+    border-radius: 50px;
+    color: var(--text-dark);
+    font-size: 10px;
+}
+
+.examination-tag.general {
+    background: var(--brand-jade-light);
+}
+
+.examination-tag.vaccination {
+    background: #dacefc;
+}
+
+.examination-tag.blood-test {
+    background: #facfe1;
+}
+
+.examination-tag.rtg {
+    background: #a9d8f9;
+}
+
+.examination-tag.usg {
+    background: #ddfeaa;
 }

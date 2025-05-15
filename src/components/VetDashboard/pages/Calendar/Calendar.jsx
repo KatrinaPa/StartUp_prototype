@@ -57,12 +57,13 @@ export default function Calendar({ showNewAppointment, setShowNewAppointment }) 
         plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
         initialView: 'timeGridWeek',
         initialDate: today,
-        firstDay: 1, // Start week on Monday
+        firstDay: 2, // !!!!! Start week with:  
         slotMinTime: '08:00:00',
         slotMaxTime: '20:00:00',
         displayEventEnd: true,
         selectable: true,
         editable: true,
+        allDaySlot: false,
         locale: 'lv',
         headerToolbar: {
             left: 'prev,next today',

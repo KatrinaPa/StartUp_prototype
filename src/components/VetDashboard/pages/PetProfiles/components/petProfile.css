@@ -188,7 +188,7 @@
     display: flex;
     gap: 0.5rem;
     color: var(--text-secondary);
-    font-size: 12px;
+    font-size: 14px;
     text-align: left;
 }
 
@@ -200,7 +200,7 @@
 .detail-item label,
 .detail-item span {
     color: var(--text-secondary);
-    font-size: 12px;
+    font-size: 14px;
     text-align: left;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -215,14 +215,13 @@
 .pet-profile-divider {
     height: 1px;
     background: var(--border-light);
-    margin: 1rem 0;
+    margin: 0.8rem 0 0 0;
     width: 100%;
 }
 
 .owner-profile-info {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 }
 
 .owner-profile-info h3,

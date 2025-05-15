@@ -56,10 +56,6 @@
   box-shadow: 0 0 0 2px rgba(255, 105, 180, 0.1);
 }
 
-.calendar-filters select:focus {
-  outline: none;
-}
-
 .calendar-container {
   height: auto;
 }
@@ -81,29 +77,20 @@
   border-radius: 50px;
   padding: 0.5rem 1rem;
   font-family: 'Roboto', sans-serif;
+  color: var(--text-light);
+}
+
+.fc .fc-button:hover {
+  opacity: 1;
+  background: var(--brand-jade);
 }
 
 .fc .fc-button-primary:not(:disabled).fc-button-active,
 .fc .fc-button-primary:not(:disabled):active {
   background: var(--brand-pink);
   opacity: 1;
-  color: var(--text-dark);
+  color: var(--text-primary);
   font-weight: 700;
-}
-
-.fc .fc-button:hover {
-  background: var(--brand-jade);
-  opacity: 1;
-}
-
-/* Keep active button at full opacity */
-.fc .fc-button-active:hover {
-  opacity: 1;
-  background: var(--brand-pink) !important;
-}
-
-.fc .fc-button-primary:disabled {
-  color: var(--text-dark);
 }
 
 .fc-day-today {
@@ -119,11 +106,6 @@
 .fc-v-event .fc-event-main-frame {
   padding: 3px 4px !important;
   line-height: 1.5 !important;
-}
-
-.fc-v-event .fc-event-main {
-  /* Remove this line as it's setting all events to dark text */
-  /* color: var(--text-dark); */
 }
 
 .fc-v-event .fc-event-main .today-event {
@@ -169,7 +151,7 @@
 .fc-h-event.past-event .fc-event-main {
   background-color: var(--bg-light-grey);
   opacity: 0.7;
-  color: var(--text-dark);
+  color: var(--text-primary);
 }
 
 /* Style future events */
@@ -178,7 +160,7 @@
 .fc-h-event.future-event .fc-event-main {
   background-color: var(--brand-pink);
   opacity: 0.7;
-  color: var(--text-dark);
+  color: var(--text-primary);
 }
 
 /* Hover effect for all events */
@@ -194,13 +176,21 @@
   
 /* Style for Today button */
 .fc .fc-today-button {
-  background: var(--brand-pink) !important;
-  font-weight: 700;
+  background: var(--brand-jade) !important;
+  opacity: 0.50;
+  color: var(--text-light);
 }
-  
+
 .fc .fc-today-button:hover {
-  background: var(--brand-jade-light) !important;
   opacity: 1;
+}
+
+.fc .fc-today-button:disabled,
+.fc .fc-today-button:active,
+.fc .fc-today-button.fc-button-active {
+  background: var(--brand-pink) !important;
+  opacity: 1;
+  color: var(--text-primary);
   font-weight: 700;
 }
 
@@ -211,6 +201,17 @@
 .fc-timegrid-event-harness {
   margin: 2px 0 !important;
 } 
+
+.fc .fc-button:focus,
+.fc .fc-button:focus-visible,
+.fc .fc-button-primary:focus,
+.fc .fc-button-primary:not(:disabled):active:focus,
+.fc .fc-button-primary:not(:disabled).fc-button-active:focus,
+.fc .fc-today-button:focus,
+.fc .fc-today-button:focus-visible {
+  box-shadow: none;
+  outline: none;
+}
 
 /* Modal styles */
 .modal-overlay {

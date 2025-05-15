@@ -6,15 +6,17 @@ PetMedData is a web-based veterinary practice management system built with React
 
 This project is part of a school StartUp module and is currently in development. The concept and features are undergoing idea and user validation.
 
-**[Prototype Vercel deployment!](https://petmeddataproto-hqprkvs8i-katrinas-projects-ec4d6da8.vercel.app)**
+**[Prototype Vercel deployment!](https://petmeddataproto-ardhur3ih-katrinas-projects-ec4d6da8.vercel.app/)**
 
 ## Screenshots
 
 <p>
-  <img src="/src/assets/scr01.png" width="350" style="display: inline-block; margin-right: 110px;">
-  <img src="/src/assets/scr02.png" width="350" style="display: inline-block; margin-right: 110px;">
-  <img src="/src/assets/scr03.png" width="350" style="display: inline-block; margin-right: 110px;">
-  <img src="/src/assets/scr04.png" width="350" style="display: inline-block; margin-right: 110px;">
+  <img src="/src/assets/Screenshot1.png" width="350" style="display: inline-block; margin-right: 110px;">
+  <img src="/src/assets/Screenshot2.png" width="350" style="display: inline-block; margin-right: 110px;">
+  <img src="/src/assets/Screenshot3.png" width="350" style="display: inline-block; margin-right: 110px;">
+  <img src="/src/assets/Screenshot4.png" width="350" style="display: inline-block; margin-right: 110px;">
+  <img src="/src/assets/Screenshot5.png" width="350" style="display: inline-block; margin-right: 110px;">
+  <img src="/src/assets/Screenshot6.png" width="350" style="display: inline-block; margin-right: 110px;">
 </p>
 
 ## Features
@@ -69,6 +71,11 @@ src/
 │   │   │       ├── components/
 │   │   │       │   ├── PetProfile.jsx
 │   │   │       │   └── petProfile.css
+│   │   │       │   ├── VisitHistory.jsx
+│   │   │       │   ├── VisitProtocol.jsx
+│   │   │       │   └── visitHistory.css
+│   │   │       │   └── visitProtocol.css
+│   │   │       │   ├── VaccinationProtocol.jsx
 │   │   │       ├── PatientView.jsx
 │   │   │       ├── patientView.css
 │   │   │       └── petProfilesData.js
@@ -88,6 +95,7 @@ src/
   - Full week view centered on current date
   - Day and month view options
   - Appointment creation and management
+  - Appointment details editing
 
 - **NewPatient/** - New patient registration form
 
@@ -105,3 +113,6 @@ src/
   - Medical history
   - Owner information
   - Vaccination records
+  - Visit history
+  - Visit protocol
+  - Vaccination protocol
