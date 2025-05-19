@@ -6,7 +6,7 @@ PetMedData is a web-based veterinary practice management system built with React
 
 This project is part of a school StartUp module and is currently in development. The concept and features are undergoing idea and user validation.
 
-**[Prototype Vercel deployment!](xxx)**
+**[Prototype Vercel deployment will come!](xxx)**
 
 ## Screenshots
 
@@ -39,48 +39,44 @@ This project is part of a school StartUp module and is currently in development.
 ## Project Structure (so far)
 
 ```
-src/
-├── components/
-│   ├── VetDashboard/
-│   │   ├── pages/
-│   │   │   ├── Calendar/
-│   │   │   │   ├── components/
-│   │   │   │   │   ├── CalendarHeader.jsx
-│   │   │   │   │   ├── NewAppointmentModal.jsx
-│   │   │   │   │   └── AppointmentDetailsModal.jsx
-│   │   │   │   ├── config/
-│   │   │   │   │   └── calendarConfig.js
-│   │   │   │   ├── data/
-│   │   │   │   │   └── demoEvents.js
-│   │   │   │   ├── Calendar.jsx
-│   │   │   │   └── calendar.css
-│   │   │   ├── NewPatient/
-│   │   │   │   ├── NewPatient.jsx
-│   │   │   │   └── newPatient.css
-│   │   │   ├── Patients/
-│   │   │   │   ├── patientsData.js
-│   │   │   │   ├── petTypeUtils.js
-│   │   │   │   ├── Patients.jsx
-│   │   │   │   └── patients.css
-│   │   │   └── PetProfiles/
-│   │   │       ├── components/
-│   │   │       │   ├── PetProfile.jsx
-│   │   │       │   └── petProfile.css
-│   │   │       │   ├── VisitHistory.jsx
-│   │   │       │   ├── VisitProtocol.jsx
-│   │   │       │   └── visitHistory.css
-│   │   │       │   └── visitProtocol.css
-│   │   │       │   ├── VaccinationProtocol.jsx
-│   │   │       ├── PatientView.jsx
-│   │   │       ├── patientView.css
-│   │   │       └── petProfilesData.js
-│   │   ├── NavbarVets.jsx
-│   │   └── QuickActions.jsx
-│   ├── auth/
-│   └── home/
-├── assets/
-│   └── pet-profiles/
-└── App.jsx
+├── src
+│   ├── App.jsx
+│   ├── assets                 # Images, icons, SVGs
+│   ├── components
+│   │   ├── common             # Reusable UI components (btns, icons, cards etc)
+│   │   └── layout
+│   │       ├── Footer.jsx
+│   │       ├── MainLayout.jsx
+│   │       └── headers
+│   │           ├── HomeHeader.jsx
+│   │           ├── OwnerHeader.jsx
+│   │           └── VetHeader.jsx
+│   ├── context                # React contexts (auth, user, etc.)
+│   ├── data                   # Local JSON data or mock data
+│   ├── index.css              # Global styles, branding, CSS variables
+│   ├── main.jsx               # App entry point
+│   ├── pages                  # Route-based views
+│   │   ├── Home
+│   │   │   └── HomePage.jsx
+│   │   ├── Owners
+│   │   │   ├── Dashboard.jsx
+│   │   │   └── QuickActions.jsx
+│   │   └── Vets
+│   │       ├── Calendar
+│   │       │   └── CalendarPage.jsx
+│   │       ├── Dashboard.jsx
+│   │       ├── NewPatient
+│   │       │   └── NewPatientPage.jsx
+│   │       ├── Patients
+│   │       │   └── PatientsPage.jsx
+│   │       └── QuickActions.jsx
+│   ├── router
+│   │   ├── AppRoutes.jsx      # Route definitions
+│   │   └── ProtectedRoute.jsx # Auth guard component
+│   ├── services               # API calls and integrations
+│   └── utils                  # Helper functions (e.g. dateFormat, API helpers)
+├── tailwind.config.js         # Tailwind theme and branding extension
+└── vite.config.js             # Vite config
 ```
 
 ### Key Components
