@@ -4,19 +4,39 @@
 
 src/
 ├── components/
-│ └── common/
-│ ├── Button.jsx
-│ ├── CloseButton.jsx
-│ ├── IconButton.jsx
-│ ├── Input.jsx
-│ ├── Label.jsx
-│ ├── Select.jsx
-│ ├── TextArea.jsx
-│ ├── Icons/
-│ │ ├── index.js
-│ │ ├── PetTypeIcons.jsx
-│ │ └── SidebarIcons.jsx
-│ └── index.js
+│ ├── common/
+│ │ ├── ActionButtons.jsx
+│ │ ├── Button.jsx
+│ │ ├── CloseButton.jsx
+│ │ ├── ExaminationTag.jsx
+│ │ ├── ExaminationTags.jsx
+│ │ ├── IconButton.jsx
+│ │ ├── IconSelector.jsx
+│ │ ├── Input.jsx
+│ │ ├── Label.jsx
+│ │ ├── Modal.jsx
+│ │ ├── SearchBar.jsx
+│ │ ├── Select.jsx
+│ │ ├── TextArea.jsx
+│ │ ├── TimeSelect.jsx
+│ │ ├── Icons/
+│ │ │ ├── index.js
+│ │ │ ├── PetTypeIcons.jsx
+│ │ │ └── SidebarIcons.jsx
+│ │ └── index.js
+│ └── layout/
+│ ├── MainLayout.jsx
+│ └── headers/
+│ ├── HomeHeader.jsx
+│ ├── OwnerHeader.jsx
+│ └── VetHeader.jsx
+├── constants/
+│ └── examinationLabels.js
+├── data/
+│ ├── examinationLabels.js
+│ ├── patientsData_examples.js
+│ ├── vaccinesData_examples.js
+│ └── visitsData_examples.js
 ├── layouts/
 │ └── VetLayout.jsx
 ├── pages/
@@ -46,9 +66,16 @@ src/
 │ │ ├── PatientsPage.jsx
 │ │ ├── PatientProfilePage.jsx
 │ │ └── components/
+│ │ ├── PatientsTable.jsx
 │ │ └── PatientProfile/
-│ │ ├── index.js
-│ │ └── ...
+│ │ ├── PetProfile.jsx
+│ │ ├── VaccinationProtocol.jsx
+│ │ ├── VisitHistory.jsx
+│ │ ├── VisitProtocol.jsx
+│ │ ├── components/
+│ │ │ ├── PetImage.jsx
+│ │ │ └── VaccinesList.jsx
+│ │ └── index.js
 │ ├── NewPatient/
 │ │ └── NewPatientPage.jsx
 │ ├── Dashboard.jsx
@@ -57,7 +84,8 @@ src/
 │ ├── AppRoutes.jsx
 │ └── ProtectedRoute.jsx
 └── utils/
-└── dateUtils.js
+├── dateUtils.js
+└── imageUtils.js
 
 ## Design System & Branding
 
