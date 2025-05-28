@@ -22,10 +22,12 @@
   --text-primary: #333333;    /* Main text color */
   --text-dark: #49454F;       /* Dark text on light backgrounds */
   --text-secondary: #666666;  /* Secondary text, labels */
+  --text-grey: #6d6d6d;      /* Grey text for placeholder */
   --text-light: #ffffff;       /* Light text on dark backgrounds */
   
   /* Border Colors */
   --border-light: #d8d6d6;    /* Light borders */
+  --border-grey: #a1a1a1;    /* Grey borders */
   
   /* Status Colors */
   --status-red: #ff4444;      /* Notifications, errors */
@@ -33,6 +35,13 @@
   /* Button Colors */
   --btn-vet: #FFE5D9;        /* Vet button specific */
   --btn-owner: #E2F0CB;      /* Owner button specific */
+  
+  /* Examination tag colors */
+  --tag-blood: #facfe1;
+  --tag-usg: #ddfeaa;
+  --tag-rtg: #a9d8f9;
+  --tag-vaccination: #b0d6d6;
+  --tag-general: #dacefc;
 }
 
 body {
@@ -43,5 +52,26 @@ body {
 #root {
   margin: 0 auto;
   width: 100%;
+}
+
+/* Style the date input text */
+input[type="date"]::-webkit-datetime-edit {
+  color: var(--border-grey);
+}
+
+/* Style the text when date is selected */
+input[type="date"]:valid::-webkit-datetime-edit {
+  color: var(--text-primary);
+}
+
+/* Style the calendar picker icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 1;
+  filter: invert(80%) sepia(5%) saturate(19%) hue-rotate(314deg) brightness(89%) contrast(90%);
+}
+
+/* Style the calendar picker icon when date is selected */
+input[type="date"]:valid::-webkit-calendar-picker-indicator {
+  filter: invert(48%) sepia(0%) saturate(1011%) hue-rotate(193deg) brightness(91%) contrast(86%);
 }
 

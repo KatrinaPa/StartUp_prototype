@@ -34,49 +34,67 @@ This project is part of a school StartUp module and is currently in development.
 - React
 - date-fns for date handling
 - React Icons
-- CSS Modules for styling
+- TailwindCSS and CSS for styling
 
 ## Project Structure (so far)
 
 ```
-├── src
-│   ├── App.jsx
-│   ├── assets                 # Images, icons, SVGs
-│   ├── components
-│   │   ├── common             # Reusable UI components (btns, icons, cards etc)
-│   │   └── layout
-│   │       ├── Footer.jsx
-│   │       ├── MainLayout.jsx
-│   │       └── headers
-│   │           ├── HomeHeader.jsx
-│   │           ├── OwnerHeader.jsx
-│   │           └── VetHeader.jsx
-│   ├── context                # React contexts (auth, user, etc.)
-│   ├── data                   # Local JSON data or mock data
-│   ├── index.css              # Global styles, branding, CSS variables
-│   ├── main.jsx               # App entry point
-│   ├── pages                  # Route-based views
-│   │   ├── Home
-│   │   │   └── HomePage.jsx
-│   │   ├── Owners
-│   │   │   ├── Dashboard.jsx
-│   │   │   └── QuickActions.jsx
-│   │   └── Vets
-│   │       ├── Calendar
-│   │       │   └── CalendarPage.jsx
-│   │       ├── Dashboard.jsx
-│   │       ├── NewPatient
-│   │       │   └── NewPatientPage.jsx
-│   │       ├── Patients
-│   │       │   └── PatientsPage.jsx
-│   │       └── QuickActions.jsx
-│   ├── router
-│   │   ├── AppRoutes.jsx      # Route definitions
-│   │   └── ProtectedRoute.jsx # Auth guard component
-│   ├── services               # API calls and integrations
-│   └── utils                  # Helper functions (e.g. dateFormat, API helpers)
-├── tailwind.config.js         # Tailwind theme and branding extension
-└── vite.config.js             # Vite config
+src/
+├── components/
+│ └── common/
+│ ├── Button.jsx
+│ ├── CloseButton.jsx
+│ ├── IconButton.jsx
+│ ├── Input.jsx
+│ ├── Label.jsx
+│ ├── Select.jsx
+│ ├── TextArea.jsx
+│ ├── Icons/
+│ │ ├── index.js
+│ │ ├── PetTypeIcons.jsx
+│ │ └── SidebarIcons.jsx
+│ └── index.js
+├── layouts/
+│ └── VetLayout.jsx
+├── pages/
+│ ├── Home/
+│ │ └── HomePage.jsx
+│ ├── Owners/
+│ │ └── Dashboard.jsx
+│ └── Vets/
+│ ├── Calendar/
+│ │ ├── CalendarPage.jsx
+│ │ ├── config/
+│ │ │ └── calendarConfig.js
+│ │ ├── styles/
+│ │ │ └── calendar.css
+│ │ └── components/
+│ │ ├── NewAppointmentModal.jsx
+│ │ └── sections/
+│ │ ├── DateTimeSection.jsx
+│ │ ├── VetSelection.jsx
+│ │ ├── ExistingPatientSection.jsx
+│ │ ├── NewPatientSection.jsx
+│ │ ├── OwnerDetailsSection.jsx
+│ │ ├── NotesSection.jsx
+│ │ ├── NotificationPreferences.jsx
+│ │ └── index.js
+│ ├── Patients/
+│ │ ├── PatientsPage.jsx
+│ │ ├── PatientProfilePage.jsx
+│ │ └── components/
+│ │ └── PatientProfile/
+│ │ ├── index.js
+│ │ └── ...
+│ ├── NewPatient/
+│ │ └── NewPatientPage.jsx
+│ ├── Dashboard.jsx
+│ └── VetQuickActions.jsx
+├── router/
+│ ├── AppRoutes.jsx
+│ └── ProtectedRoute.jsx
+└── utils/
+└── dateUtils.js
 ```
 
 ### Key Components

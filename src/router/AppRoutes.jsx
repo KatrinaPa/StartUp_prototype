@@ -5,6 +5,7 @@ import OwnerDashboard from '../pages/Owners/Dashboard';
 import CalendarPage from '../pages/Vets/Calendar/CalendarPage';
 import NewPatientPage from '../pages/Vets/NewPatient/NewPatientPage';
 import PatientsPage from '../pages/Vets/Patients/PatientsPage';
+import PatientProfilePage from '../pages/Vets/Patients/PatientProfilePage';
 import ProtectedRoute from './ProtectedRoute';
 
 const AppRoutes = () => {
@@ -20,8 +21,12 @@ const AppRoutes = () => {
       }>
         <Route index element={<Navigate to="calendar" replace />} />
         <Route path="calendar" element={<CalendarPage />} />
+        <Route path="calendar/new" element={<CalendarPage />} />
         <Route path="new-patient" element={<NewPatientPage />} />
-        <Route path="patients" element={<PatientsPage />} />
+        <Route path="patients">
+          <Route index element={<PatientsPage />} />
+          <Route path=":id" element={<PatientProfilePage />} />
+        </Route>
       </Route>
       
       {/* Owner Routes */}

@@ -19,8 +19,10 @@ const MainLayout = ({ children }) => {
   return (
     <div className="min-h-screen bg-bg-primary flex flex-col">
       {getHeader()}
-      <main className="container mx-auto px-4 py-8 flex-grow">
-        {children}
+      <main className="flex-1 min-w-0">
+        <div className="max-w-[1270px] w-full mx-auto py-8">
+          {children}
+        </div>
       </main>
       <Footer />
     </div>
