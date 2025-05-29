@@ -7,16 +7,14 @@
 
 :root {
   /* Main Background Colors */
-  --bg-primary: #fff9f2;      /* Main app background */
+  --bg-primary: #F0F7F5;      /* Main app background (old ivory: #fff9f2) */
   --bg-white: #ffffff;        /* White backgrounds */
-  --bg-lighter-grey: #ecf1ee;   /* Lighter grey backgrounds #F3F6F1*/
-  --bg-light-grey: #b4b3b3;   /* Light grey backgrounds */
-  --bg-input: #fce9e8;        /* Input fields background */
+  /* Lighter grey backgrounds (--bg-lighter-grey: #ecf1ee */
   
   /* Brand Colors */
-  --brand-jade: #198185;    /* Logo circle, icons */
-  --brand-pink: #ffb3b3;      /* Buttons, user info */
-  --brand-jade-light: #b0d6d6;      /* Buttons, user info */
+  --brand-yellow: #FFDE5B;    /* Logo circle, icons (old --brand-jade: #198185) */
+  --brand-green: #255E4D;      /* Buttons, user info (old pink: #ffb3b3) */
+  --brand-mint: #8BD1CC;      /* Buttons, user info (old --brand-jade: #b0d6d6) */
   
   /* Text Colors */
   --text-primary: #333333;    /* Main text color */
@@ -37,11 +35,11 @@
   --btn-owner: #E2F0CB;      /* Owner button specific */
   
   /* Examination tag colors */
-  --tag-blood: #facfe1;
-  --tag-usg: #ddfeaa;
+  --tag-blood: #facfd7;
+  --tag-usg: #d8feaa;
   --tag-rtg: #a9d8f9;
   --tag-vaccination: #b0d6d6;
-  --tag-general: #dacefc;
+  --tag-general: #fee5b4; /* lillac: #dacefc */
 }
 
 body {

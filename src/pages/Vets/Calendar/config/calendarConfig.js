@@ -2,11 +2,28 @@ import { addDays, subDays } from 'date-fns';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
+import { getWeekRange } from '../../../../utils/dateUtils';
 
 export const getCalendarConfig = (today) => ({
   plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
   initialView: 'timeGridWeek',
-  initialDate: subDays(today, 3),
+  initialDate: subDays(today, 1),
+  views: {
+    timeGridWeek: {
+      type: 'timeGrid',
+      duration: { days: 7 },
+      visibleRange: (currentDate) => {
+        const { weekStart, weekEnd } = getWeekRange(today);
+        return { 
+          start: weekStart,
+          end: weekEnd 
+        };
+      }
+    },
+    dayGridMonth: {
+      fixedWeekCount: false
+    }
+  },
   slotMinTime: '08:00:00',
   slotMaxTime: '20:00:00',
   displayEventEnd: true,
@@ -24,7 +41,7 @@ export const getCalendarConfig = (today) => ({
   buttonText: {
     today: 'Šodien',
     month: 'Mēnesis',
-    week: 'Nedēļa',
+    timeGridWeek: 'Nedēļa',
     day: 'Diena',
     prev: '‹',
     next: '›'
@@ -45,28 +62,11 @@ export const getCalendarConfig = (today) => ({
   height: 'auto',
   stickyHeaderDates: true,
   nowIndicator: true,
-  views: {
-    customWeekView: {
-      type: 'timeGrid',
-      duration: { days: 7 },
-      visibleRange: (currentDate) => {
-        const start = subDays(currentDate, 3);
-        const end = addDays(currentDate, 3);
-        return { start, end };
-      },
-      slotDuration: '00:30:00',
-      slotLabelInterval: '01:00',
-      allDaySlot: false
-    },
-    dayGridMonth: {
-      fixedWeekCount: false
-    }
-  },
   themeSystem: 'standard',
-  eventColor: 'rgb(var(--brand-pink-rgb))',
+  eventColor: 'rgb(var(--brand-green-rgb))',
   eventTextColor: '#FFFFFF',
   eventBorderColor: 'transparent',
-  nowIndicatorClassNames: 'border-brand-pink',
+  nowIndicatorClassNames: 'border-brand-green',
   dayCellClassNames: 'text-text-secondary',
   slotLabelClassNames: 'text-text-secondary font-medium',
   dayHeaderClassNames: 'text-text-primary font-medium',

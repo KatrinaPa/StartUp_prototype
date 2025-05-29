@@ -39,7 +39,7 @@ const ExaminationTag = ({
                : `bg-white text-text-primary ${borderStyle} hover:${tagStyle}`}`
           : `px-[.6rem] py-[.2rem] text-[10px] ${tagStyle}`
         }
-        ${isSelected && !isSelectable ? 'ring-2 ring-brand-jade' : ''}
+        ${isSelected && !isSelectable ? 'ring-2 ring-brand-yellow' : ''}
         ${className}
       `}
       {...props}

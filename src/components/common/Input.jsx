@@ -17,7 +17,7 @@ const Input = forwardRef(({
         rounded-xl
         focus:outline-none
         focus:ring-1
-        focus:ring-brand-jade
+        focus:ring-brand-yellow
         transition
         placeholder:text-text-grey
         ${className}

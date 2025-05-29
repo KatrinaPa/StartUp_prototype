@@ -11,8 +11,6 @@ const Button = forwardRef(({
 }, ref) => {
   const baseStyles = `
     rounded-full
-    font-medium
-    text-sm
     cursor-pointer
     transition
     duration-200
@@ -27,24 +25,37 @@ const Button = forwardRef(({
   
   const variants = {
     primary: `
-      bg-brand-pink
-      text-text-primary
-      border-2 border-transparent
-      hover:opacity-90
+      bg-brand-green
+      text-text-light
+      text-sm
+      opacity-80
+      hover:opacity-100
+      hover:scale-105
       focus:opacity-90
       active:opacity-90
+      active:scale-105
+      focus:scale-105
+      focus:font-bold
     `,
     secondary: `
-      bg-white
-      text-brand-jade
-      border-2 border-brand-jade
-      hover:bg-brand-jade hover:text-text-light
-      focus:bg-brand-jade focus:text-text-light
-      active:bg-brand-jade active:text-text-light
+      bg-brand-yellow
+      text-text-dark
+      text-sm
+      opacity-80
+      border-none
+      hover:opacity-100
+      hover:scale-105
+      focus:opacity-100
+      active:opacity-100
+      active:text-medium
+      active:scale-105
+      focus:scale-105
+      focus:font-bold
     `,
     tertiary: `
       bg-white
       text-text-primary
+      text-sm
       border-2 border-transparent
       transition-all
       py-2 px-4
@@ -53,6 +64,7 @@ const Button = forwardRef(({
     quaternary: `
       bg-white
       text-text-primary
+      text-sm
       border-2 
       py-2 px-4
       font-normal
@@ -62,20 +74,22 @@ const Button = forwardRef(({
       py-4 px-4
       rounded-full
       bg-transparent
-      text-text-secondary
-      text-left font-medium
+      text-text-primary
+      text-left 
+      text-medium
       border-none
       transition-all duration-200
       flex items-center gap-4
-      hover:not(.active):bg-white
-      hover:not(.active):shadow-[1px_2px_0_rgba(0,0,0,0.1)]
-      hover:not(.active):-translate-y-[1px]
-      [&.active]:bg-brand-pink
-      [&.active]:text-text-primary
-      focus:bg-brand-pink
-      focus:text-text-primary
-      active:bg-brand-pink
-      active:text-text-primary
+      hover:bg-white
+      hover:text-text-primary
+      hover:shadow-[1px_2px_0_rgba(0,0,0,0.1)]
+      hover:-translate-y-[1px]
+      [&.active]:bg-brand-green
+      [&.active]:text-white
+      focus:bg-brand-green
+      focus:text-white
+      active:bg-brand-green
+      active:text-white
     `
   };
   

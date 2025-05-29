@@ -1,7 +1,7 @@
 import { getImageUrl, placeholderImage } from '../../../../../../utils/imageUtils';
 
 const PetImage = ({ imageName, petName }) => (
-  <div className="w-[200px] h-[200px] flex-shrink-0 rounded-lg overflow-hidden bg-lighter-grey">
+  <div className="w-[200px] h-[200px] flex-shrink-0 rounded-lg overflow-hidden bg-primary">
     <img 
       src={getImageUrl(imageName)} 
       alt={petName}

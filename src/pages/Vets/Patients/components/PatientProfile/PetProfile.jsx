@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
-import { EditIcon } from '../../../../../components/common/Icons';
+import { EditIcon, PetTypeIcons, OtherPetIcon } from '../../../../../components/common/Icons';
 import { calculateAge, formatDate } from '../../../../../utils/dateUtils';
+import { translatePetType } from '../../../../../utils/petTypeUtils';
 import PetImage from './components/PetImage';
 import VaccinesList from './components/VaccinesList';
 
 const PetProfile = ({ patient }) => {
   const [age, setAge] = useState('');
+  const PetIcon = PetTypeIcons[patient.petType] || OtherPetIcon;
 
   useEffect(() => {
     if (patient.birthDate) {
@@ -21,7 +23,7 @@ const PetProfile = ({ patient }) => {
         <div className="flex-grow">
           <div className="flex justify-between items-start">
             <h1 className="text-2xl font-bold text-text-primary">{patient.petName}</h1>
-            <button className="text-brand-jade hover:text-brand-jade-dark transition-transform transition-opacity duration-200 opacity-60 hover:opacity-100 hover:scale-105">
+            <button className="text-brand-green hover:text-brand-green transition-transform transition-opacity duration-200 opacity-60 hover:opacity-100 hover:scale-105">
               <EditIcon className="w-8 h-8" />
             </button>
           </div>
@@ -33,10 +35,10 @@ const PetProfile = ({ patient }) => {
             </p>
           </div>
 
-          <div className="text-text-secondary grid grid-cols-2 gap-y-3 gap-x-4 bg-lighter-grey py-2 px-4 rounded-xl text-sm">
+          <div className="text-text-secondary grid grid-cols-2 gap-y-3 gap-x-4 bg-primary py-2 px-4 rounded-xl text-sm">
             <div className="flex gap-2">
               <p>Suga:</p>
-              <p className="font-medium text-text-primary">{patient.petType}</p>
+              <p className="font-medium text-text-primary">{translatePetType(patient.petType)}</p>
             </div>
             <div className="flex gap-2">
               <p>Krāsa:</p>
@@ -74,7 +76,7 @@ const PetProfile = ({ patient }) => {
       {/* Owner Info Section */}
       <div className="mb-6">
         <h4 className="text-lg font-semibold mb-2 text-text-dark">Īpašnieka dati</h4>
-        <div className="text-text-secondary grid grid-cols-2 space-y-1 bg-lighter-grey py-2 px-4 rounded-xl text-sm">
+        <div className="text-text-secondary grid grid-cols-2 space-y-1 bg-primary py-2 px-4 rounded-xl text-sm">
           <div className="flex gap-2">
             <p>Vārds, Uzvārds:</p>
             <p className="font-medium text-text-primary">{patient.ownerName}</p>

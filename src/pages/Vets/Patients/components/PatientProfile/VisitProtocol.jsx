@@ -54,7 +54,7 @@ const VisitProtocol = ({ patientId }) => {
         </div>
 
         {/* Measurements Section */}
-        <div className="bg-lighter-grey p-4 rounded-xl">
+        <div className="bg-primary p-4 rounded-xl">
           <h3 className="font-semibold mb-4 text-text-dark">Pamatmērījumi:</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div>
@@ -77,7 +77,7 @@ const VisitProtocol = ({ patientId }) => {
         </div>
 
         {/* Examination Types Section */}
-        <div className="bg-lighter-grey p-4 rounded-xl">
+        <div className="bg-primary p-4 rounded-xl">
           <h3 className="font-semibold mb-4 text-text-dark">Izmeklējumu veidi:</h3>
           <ExaminationTags 
             examinations={availableExaminations}
@@ -96,7 +96,7 @@ const VisitProtocol = ({ patientId }) => {
 
         {/* General Examination Form */}
         {selectedExaminations.includes('general') && (
-          <div className="bg-lighter-grey p-4 rounded-xl space-y-6">
+          <div className="bg-primary p-4 rounded-xl space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <Label>Anamnēze:</Label>
@@ -122,7 +122,7 @@ const VisitProtocol = ({ patientId }) => {
 
         {/* Selected Examinations Display */}
         {selectedExaminations.length > 0 && (
-          <div className="bg-lighter-grey p-4 rounded-xl">
+          <div className="bg-primary p-4 rounded-xl">
             <div>
               <Label>Izmeklējumi, procedūras:</Label>
               <TextArea className="mb-4" />

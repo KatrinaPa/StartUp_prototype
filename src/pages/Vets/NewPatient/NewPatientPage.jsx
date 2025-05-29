@@ -115,7 +115,7 @@ const NewPatientPage = () => {
 
   return (
     <div>
-      <div className="max-w-5xl my-8 mx-20 p-8 rounded-2xl bg-lighter-grey">
+      <div className="max-w-5xl my-8 mx-20 p-8 rounded-2xl bg-primary">
         <h1 className="text-2xl font-bold mb-6 text-text-dark text-center">
           Jauns pacients
         </h1>

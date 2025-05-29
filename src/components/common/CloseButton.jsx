@@ -11,7 +11,7 @@ const CloseButton = ({ onClick, className = '' }) => {
         rounded-full 
         flex items-center justify-center
         transition-colors
-        hover:bg-brand-jade
+        hover:bg-brand-yellow
         hover:text-text-light
         ${className}
       `}

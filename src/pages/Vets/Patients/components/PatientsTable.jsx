@@ -8,19 +8,19 @@ const PatientsTable = ({ patients, onPatientClick }) => {
     return (
       <div className={`
         w-11 h-11
-        bg-brand-jade
+        bg-brand-yellow
         rounded-full
         flex items-center justify-center
         cursor-pointer
         transition-transform transition-opacity duration-200
         opacity-60
-        hover:opacity-100
-        hover:scale-105
+        group-hover:opacity-100
+        group-hover:scale-105
       `}>
         <Icon className={`
           ${isOtherPet ? 'w-6' : 'w-7'} 
           h-auto 
-          text-white
+          text-text-primary
         `} />
       </div>
     );
@@ -30,7 +30,7 @@ const PatientsTable = ({ patients, onPatientClick }) => {
     <div className="overflow-x-auto">
       <table className="w-full">
         <thead>
-          <tr className="bg-lighter-grey text-text-dark">
+          <tr className="bg-primary text-text-dark">
             <th className="px-4 py-3 text-left">Dzīvnieks</th>
             <th className="px-4 py-3 text-left">Vārds</th>
             <th className="px-4 py-3 text-left">Šķirne</th>
@@ -44,7 +44,7 @@ const PatientsTable = ({ patients, onPatientClick }) => {
               <tr 
                 key={patient.id}
                 onClick={() => onPatientClick(patient.id)}
-                className="border-b border-border-light hover:bg-lighter-grey cursor-pointer"
+                className="group border-b border-border-light hover:bg-primary cursor-pointer"
               >
                 <td className="px-4 py-3">
                   {getPetIcon(patient.petType)}
@@ -58,7 +58,7 @@ const PatientsTable = ({ patients, onPatientClick }) => {
                       {new Date(patient.lastVisit).toLocaleDateString('lv-LV')}
                     </p>
                     {patient.nextVisit && (
-                      <p className="text-brand-jade">
+                      <p className="text-brand-mint font-medium">
                         {new Date(patient.nextVisit).toLocaleDateString('lv-LV')}
                       </p>
                     )}

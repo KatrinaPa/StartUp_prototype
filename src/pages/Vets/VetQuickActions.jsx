@@ -18,22 +18,26 @@ const VetQuickActions = ({
     onPatientCatalogClick?.();
   };
 
-  const iconClasses = "text-2xl text-text-primary";
+  const iconClasses = `
+    text-2xl
+    text-text-primary
+    [.active_&]:text-white
+  `;
 
   return (
     <div className="flex flex-col gap-4 bg-bg-primary">
       <Button 
         variant="sidebar"
-        className={pathname === '/vet/calendar' ? 'active' : ''}
+        className={`group ${pathname === '/vet/calendar' ? 'active' : ''}`}
         onClick={() => onActionClick('calendar')}
         icon={<SidebarIcons.Calendar className={iconClasses} />}
       >
-        Vizīšu Kalendārs
+        Kalendārs
       </Button>
 
       <Button 
         variant="sidebar"
-        className={pathname === '/vet/calendar/new' ? 'active' : ''}
+        className={`group ${pathname === '/vet/calendar/new' ? 'active' : ''}`}
         onClick={onNewAppointmentClick}
         icon={<SidebarIcons.NewAppointment className={iconClasses} />}
       >
@@ -42,7 +46,7 @@ const VetQuickActions = ({
 
       <Button 
         variant="sidebar"
-        className={pathname === '/vet/new-patient' ? 'active' : ''}
+        className={`group ${pathname === '/vet/new-patient' ? 'active' : ''}`}
         onClick={() => onActionClick('newPatient')}
         icon={<SidebarIcons.NewPatient className={iconClasses} />}
       >
@@ -51,7 +55,7 @@ const VetQuickActions = ({
 
       <Button 
         variant="sidebar"
-        className={isPatientSection ? 'active' : ''}
+        className={`group ${isPatientSection ? 'active' : ''}`}
         onClick={handlePatientsClick}
         icon={<SidebarIcons.Patients className={iconClasses} />}
       >

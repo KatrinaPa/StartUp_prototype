@@ -38,12 +38,11 @@ const PatientsPage = () => {
       />
 
       <div className="flex justify-center gap-2 mt-6">
-        <button className="px-3 py-1 rounded bg-brand-jade text-text-light">1</button>
-        <button className="px-3 py-1 rounded hover:bg-lighter-grey">2</button>
-        <button className="px-3 py-1 rounded hover:bg-lighter-grey">3</button>
+        <button className="px-3 py-1 rounded bg-brand-yellow text-text-light">1</button>
+        <button className="px-3 py-1 rounded hover:bg-primary">3</button>
         <span className="px-3 py-1">...</span>
-        <button className="px-3 py-1 rounded hover:bg-lighter-grey">11</button>
-        <button className="px-3 py-1 rounded hover:bg-lighter-grey">12</button>
+        <button className="px-3 py-1 rounded hover:bg-primary">11</button>
+        <button className="px-3 py-1 rounded hover:bg-primary">12</button>
       </div>
     </div>
   );

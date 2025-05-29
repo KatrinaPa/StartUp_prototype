@@ -25,7 +25,7 @@ const PatientProfilePage = () => {
       <div className="max-w-7xl mx-auto space-y-6">
         <button 
           onClick={handleBack}
-          className="flex items-center gap-2 text-text-dark hover:text-brand-jade transition-colors"
+          className="flex items-center gap-2 text-text-dark hover:text-brand-green hover:font-bold"
         ><BackIcon className="w-4 h-4" /><span>Atgriezties Pacientu katalogā</span>
         </button>
         

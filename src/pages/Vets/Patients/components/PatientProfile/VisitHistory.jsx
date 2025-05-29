@@ -25,7 +25,7 @@ const VisitHistory = ({ patient }) => {
             </thead>
             <tbody className="divide-y divide-border-light">
               {visits.map((visit, index) => (
-                <tr key={index} className="hover:bg-lighter-grey">
+                <tr key={index} className="hover:bg-primary">
                   <td className="py-1 text-text-primary">
                     {formatDate(visit.date)}
                   </td>
@@ -40,20 +40,20 @@ const VisitHistory = ({ patient }) => {
         </div>
       </div>
 
-      <div className="flex items-center justify-between bg-lighter-grey p-4 rounded-xl gap-2">
+      <div className="flex items-center justify-between bg-primary p-4 rounded-xl gap-2">
         <div className="flex items-center gap-2 text-text-primary">
           <span className="text-text-secondary">Nākamā vizīte:</span>
           {formatDate(nextVisitDate)}
         </div>
-        <button className="text-brand-jade hover:text-brand-jade-dark transition-transform transition-opacity duration-200 opacity-60 hover:opacity-100 hover:scale-105">
+        <button className="text-brand-green hover:text-brand-green transition-transform transition-opacity duration-200 opacity-60 hover:opacity-100 hover:scale-105">
           <EditIcon className="w-6 h-6" />
         </button>
       </div>
 
       <Button 
         onClick={() => setShowNewAppointment(true)}
-        variant="tertiary"
-        className="mt-4 w-full"
+        variant="secondary"
+        className="mt-4 w-full font-bold"
       >
         Ieplānot vizīti
       </Button>

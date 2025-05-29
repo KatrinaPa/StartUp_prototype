@@ -55,8 +55,8 @@ export const formatDateTime = (date) => {
  * @returns {Object} weekStart and weekEnd dates
  */
 export const getWeekRange = (today) => {
-  const weekStart = subDays(today, 3);
-  const weekEnd = addDays(today, 3);
+  const weekStart = subDays(today, 1);
+  const weekEnd = addDays(weekStart, 6);
   return { weekStart, weekEnd };
 };
 

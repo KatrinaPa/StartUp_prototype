@@ -1,22 +1,29 @@
 /* Base button styles */
 .fc .fc-button.fc-button-primary {
-    background-color: var(--brand-jade);
-    opacity: 0.5;
-    color: var(--text-light);
+    background-color: var(--brand-mint);
+    opacity: 0.7;
+    color: var(--text-primary);
     border: none !important;
     border-radius: 9999px; /* fully rounded */
     padding: 0.5rem 1rem;
     transition: opacity 0.2s, background-color 0.2s;
     min-width: 40px; /* Ensure consistent button width */
   }
+
+   /* Hover, Active, and Focus states: full opacity */
+   .fc .fc-button.fc-button-primary:hover {
+     opacity: 1;
+     background-color: var(--brand-mint);
+     border: none;
+     box-shadow: none; /* optional: remove outline shadow */
+   }
   
   /* Hover, Active, and Focus states: full opacity */
-  .fc .fc-button.fc-button-primary:hover,
   .fc .fc-button.fc-button-primary:active,
   .fc .fc-button.fc-button-primary.fc-button-active,
   .fc .fc-button.fc-button-primary:focus {
     opacity: 1;
-    background-color: var(--brand-jade);
+    background-color: var(--brand-green);
     color: var(--text-light);
     border: none;
     box-shadow: none; /* optional: remove outline shadow */
@@ -31,7 +38,7 @@
   
   /* Today's column */
   .fc .fc-day.fc-day-today {
-    background-color: var(--bg-lighter-grey);
+    background-color: var(--bg-primary);
   }
   
   /* Make prev/next arrows bigger */

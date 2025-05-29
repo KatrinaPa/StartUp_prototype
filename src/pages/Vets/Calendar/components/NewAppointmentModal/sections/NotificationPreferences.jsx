@@ -17,7 +17,7 @@ export default function NotificationPreferences({ preferences, setPreferences })
           type="checkbox"
           checked={preferences.smsReminder}
           onChange={handleChange('smsReminder')}
-          className="w-4 h-4 rounded border-border-light checked:bg-brand-jade checked:border-brand-jade focus:ring-1 focus:ring-brand-jade focus:ring-offset-0"
+          className="w-4 h-4 rounded border-border-light checked:bg-brand-yellow checked:border-brand-yellow focus:ring-1 focus:ring-brand-yellow focus:ring-offset-0"
         />
         <span className="text-text-dark text-sm">Nosūtīt īpašniekam atgādinājumu sms</span>
       </label>
@@ -27,7 +27,7 @@ export default function NotificationPreferences({ preferences, setPreferences })
           type="checkbox"
           checked={preferences.emailReminder}
           onChange={handleChange('emailReminder')}
-          className="w-4 h-4 rounded border-border-light checked:bg-brand-jade checked:border-brand-jade focus:ring-1 focus:ring-brand-jade focus:ring-offset-0"
+          className="w-4 h-4 rounded border-border-light checked:bg-brand-yellow checked:border-brand-yellow focus:ring-1 focus:ring-brand-yellow focus:ring-offset-0"
         />
         <span className="text-text-dark text-sm">Nosūtīt īpašniekam atgādinājumu epastā</span>
       </label>
@@ -37,7 +37,7 @@ export default function NotificationPreferences({ preferences, setPreferences })
           type="checkbox"
           checked={preferences.phoneCall}
           onChange={handleChange('phoneCall')}
-          className="w-4 h-4 rounded border-border-light checked:bg-brand-jade checked:border-brand-jade focus:ring-1 focus:ring-brand-jade focus:ring-offset-0"
+          className="w-4 h-4 rounded border-border-light checked:bg-brand-yellow checked:border-brand-yellow focus:ring-1 focus:ring-brand-yellow focus:ring-offset-0"
         />
         <span className="text-text-dark text-sm">Atgādināt īpašniekam piezvanot</span>
       </label>

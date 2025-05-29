@@ -57,11 +57,11 @@ export default function NewAppointmentModal({
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="bg-lighter-grey rounded-2xl w-full max-w-3xl max-h-[100vh] overflow-y-auto p-8">
-        <h3 className="text-text-dark text-2xl font-bold mb-6">Jauna vizīte</h3>
+      <div className="bg-primary rounded-2xl w-full max-w-3xl max-h-[100vh] overflow-y-auto p-8 py-6">
+        <h3 className="text-text-dark text-2xl font-bold mb-4">Jauna vizīte</h3>
         
         <div className="space-y-4">
-          <div className="text-text-dark grid grid-cols-3 gap-6 pb-6 border-b border-border-light">
+          <div className="text-text-dark grid grid-cols-3 gap-6 pb-4 border-b border-border-light">
             <DateTimeSection
               selectedDate={selectedDate}
               selectedTime={selectedTime}
@@ -73,7 +73,7 @@ export default function NewAppointmentModal({
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-6 pb-6 border-b border-border-light">
+          <div className="grid grid-cols-2 gap-6 pb-4 border-b border-border-light">
             <ExistingPatientSection
               patient={formData.existingPatient}
               onChange={handleFormChange('existingPatient')}
@@ -87,14 +87,14 @@ export default function NewAppointmentModal({
             />
           </div>
 
-          <div className="grid grid-cols-3 gap-6 pb-6 border-b border-border-light">
+          <div className="grid grid-cols-3 gap-6 pb-4 border-b border-border-light">
             <OwnerDetailsSection
               owner={formData.owner}
               onChange={handleFormChange('owner')}
             />
           </div>
 
-          <div className="pb-4 border-b border-border-light">
+          <div className="pb-2 border-b border-border-light">
             <NotesSection
                 value={formData.notes}
                 onChange={(e) => handleFormChange('notes')(e.target.value)}
@@ -108,10 +108,18 @@ export default function NewAppointmentModal({
         </div>
 
         <div className="flex justify-end gap-4 mt-2">
-          <Button variant="secondary" onClick={onClose}>
+          <Button 
+            variant="secondary" 
+            onClick={onClose}
+            className="min-w-[120px]"
+          >
             Atcelt
           </Button>
-          <Button variant="primary" onClick={handleSave}>
+          <Button 
+            variant="primary" 
+            onClick={handleSave}
+            className="min-w-[120px]"
+          >
             Saglabāt
           </Button>
         </div>

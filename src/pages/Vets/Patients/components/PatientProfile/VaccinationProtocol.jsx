@@ -13,7 +13,7 @@ const VaccinationProtocol = ({ onVaccineAdd }) => {
   };
 
   return (
-    <div className="space-y-1 bg-lighter-grey rounded-xl">
+    <div className="space-y-1 bg-primary rounded-xl">
       <div>
         {vaccineRows.map((num, index) => (
           <div key={num} className="relative">

@@ -13,7 +13,7 @@ const TextArea = ({
         text-text-primary
         placeholder:text-text-grey
         focus:outline-none
-        focus:border-brand-jade
+        focus:border-brand-yellow
         ${className}
       `}
       {...props}

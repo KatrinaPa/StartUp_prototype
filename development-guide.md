@@ -100,7 +100,7 @@ All base colors and brand colors are defined using CSS variables in index.css an
 ### Tailwind Theme Customization
 
 All CSS variables are injected into Tailwind via tailwind.config.js for use like:
-bg-brand-jade
+bg-brand-yellow
 text-primary
 border-light
 
