@@ -80,10 +80,9 @@ const Button = forwardRef(({
       border-none
       transition-all duration-200
       flex items-center gap-4
-      hover:bg-white
+      hover:bg-brand-mint
       hover:text-text-primary
-      hover:shadow-[1px_2px_0_rgba(0,0,0,0.1)]
-      hover:-translate-y-[1px]
+      hover:scale-105
       [&.active]:bg-brand-green
       [&.active]:text-white
       focus:bg-brand-green

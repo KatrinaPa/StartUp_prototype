@@ -32,7 +32,7 @@ const VetQuickActions = ({
         onClick={() => onActionClick('calendar')}
         icon={<SidebarIcons.Calendar className={iconClasses} />}
       >
-        Kalendārs
+        Vizīšu Kalendārs
       </Button>
 
       <Button 

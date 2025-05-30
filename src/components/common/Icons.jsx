@@ -1,4 +1,4 @@
-import { FaDog, FaCat, FaHorse, FaPaw, FaUpload, FaSearch, FaArrowLeft, FaEdit, FaCalendarAlt, FaPlusCircle, FaUserPlus } from 'react-icons/fa';
+import { FaDog, FaCat, FaHorse, FaPaw, FaUpload, FaSearch, FaArrowLeft, FaEdit, FaCalendarAlt, FaPlusCircle, FaUserPlus, FaEnvelope, FaTimes, FaSignOutAlt } from 'react-icons/fa';
 import { BsGenderFemale, BsGenderMale } from 'react-icons/bs';
 
 // Only main pet types for NewPatientPage
@@ -26,9 +26,17 @@ export const BackIcon = FaArrowLeft;
 
 export const EditIcon = FaEdit;
 
+export const TimesIcon = FaTimes;
+
+export const LogoutIcon = FaSignOutAlt;
+
 export const SidebarIcons = {
   Calendar: FaCalendarAlt,
   NewAppointment: FaUserPlus,
   NewPatient: FaPlusCircle,
   Patients: FaPaw,
 };
+
+export const EmailIcon = ({ className }) => (
+  <FaEnvelope className={className} />
+);

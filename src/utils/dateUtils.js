@@ -1,4 +1,4 @@
-import { format, addDays, subDays } from 'date-fns';
+import { format, addDays, subDays, startOfWeek, endOfWeek } from 'date-fns';
 import { lv } from 'date-fns/locale';
 
 /**
@@ -24,11 +24,16 @@ export const calculateAge = (birthDate) => {
  * @returns {string} Formatted date
  */
 export const formatDate = (date) => {
-  return new Date(date).toLocaleDateString('lv-LV', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit'
-  });
+  return format(date, 'dd.MM.yyyy');
+};
+
+/**
+ * Formats date for API
+ * @param {Date} date 
+ * @returns {string} Formatted date for API
+ */
+export const formatDateForApi = (date) => {
+  return format(date, 'yyyy-MM-dd');
 };
 
 /**
@@ -55,8 +60,8 @@ export const formatDateTime = (date) => {
  * @returns {Object} weekStart and weekEnd dates
  */
 export const getWeekRange = (today) => {
-  const weekStart = subDays(today, 1);
-  const weekEnd = addDays(weekStart, 6);
+  const weekStart = subDays(today, 1); // Yesterday
+  const weekEnd = addDays(weekStart, 6); // 6 days after yesterday (total 7 days)
   return { weekStart, weekEnd };
 };
 

@@ -52,3 +52,45 @@
     padding: 0.5rem;
   }
   
+/* Base event styles */
+.fc-event {
+  line-height: 1.2 !important;
+  font-size: 0.875rem !important; /* 14px */
+}
+
+.fc-event-title {
+  padding: 0 4px !important;
+  font-size: 0.75rem !important; /* 12px */
+}
+
+.fc-event-time {
+  font-size: 0.75rem !important; /* 12px */
+  padding: 0 4px !important;
+}
+
+/* Appointment status styles */
+.appointment-completed,
+.appointment-completed .fc-event-title,
+.appointment-completed .fc-event-time {
+  background-color: var(--text-grey) !important;
+  color: var(--text-light) !important;
+  opacity: 0.6;
+}
+
+.appointment-scheduled,
+.appointment-scheduled .fc-event-title,
+.appointment-scheduled .fc-event-time {
+  background-color: var(--brand-mint) !important;
+  border-color: var(--brand-mint) !important;
+  color: var(--text-primary) !important;
+  opacity: 0.6;
+}
+
+/* Hover effect for appointments */
+.fc-event:hover,
+.fc-event:hover .fc-event-title,
+.fc-event:hover .fc-event-time {
+  opacity: 1 !important;
+  cursor: pointer;
+}
+  

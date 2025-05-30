@@ -10,7 +10,10 @@ export {
   SearchIcon,
   BackIcon,
   EditIcon,
-  SidebarIcons
+  SidebarIcons,
+  EmailIcon,
+  TimesIcon,
+  LogoutIcon
 } from './Icons';
 export { default as IconSelector } from './IconSelector';
 export { default as Input } from './Input';
