@@ -4,88 +4,67 @@
 
 src/
 ├── components/
-│ ├── common/
-│ │ ├── ActionButtons.jsx
-│ │ ├── Button.jsx
-│ │ ├── CloseButton.jsx
-│ │ ├── ExaminationTag.jsx
-│ │ ├── ExaminationTags.jsx
-│ │ ├── IconButton.jsx
-│ │ ├── IconSelector.jsx
-│ │ ├── Input.jsx
-│ │ ├── Label.jsx
-│ │ ├── Modal.jsx
-│ │ ├── SearchBar.jsx
-│ │ ├── Select.jsx
-│ │ ├── TextArea.jsx
-│ │ ├── TimeSelect.jsx
-│ │ ├── Icons/
-│ │ │ ├── index.js
-│ │ │ ├── PetTypeIcons.jsx
-│ │ │ └── SidebarIcons.jsx
-│ │ └── index.js
-│ └── layout/
-│ ├── MainLayout.jsx
-│ └── headers/
-│ ├── HomeHeader.jsx
-│ ├── OwnerHeader.jsx
-│ └── VetHeader.jsx
-├── constants/
-│ └── examinationLabels.js
+│ └── common/
+│ ├── Button/
+│ ├── Icons/
+│ ├── Input/
+│ ├── Modal/
+│ ├── Select/
+│ ├── TimeSelect/
+│ └── NotificationPreferences/
 ├── data/
-│ ├── examinationLabels.js
+│ ├── appointmentTypes.js
 │ ├── patientsData_examples.js
-│ ├── vaccinesData_examples.js
 │ └── visitsData_examples.js
-├── layouts/
-│ └── VetLayout.jsx
 ├── pages/
 │ ├── Home/
 │ │ └── HomePage.jsx
 │ ├── Owners/
-│ │ └── Dashboard.jsx
+│ │ └── Dashboard/
 │ └── Vets/
 │ ├── Calendar/
-│ │ ├── CalendarPage.jsx
-│ │ ├── config/
-│ │ │ └── calendarConfig.js
+│ │ ├── components/
+│ │ │ ├── EditAppointmentModal/
+│ │ │ │ ├── sections/
+│ │ │ │ │ ├── AppointmentDateSection.jsx
+│ │ │ │ │ ├── AppointmentDetailsSection.jsx
+│ │ │ │ │ ├── NotesSection.jsx
+│ │ │ │ │ └── index.js
+│ │ │ │ ├── EditAppointmentModal.jsx
+│ │ │ │ └── index.js
+│ │ │ └── NewAppointmentModal/
+│ │ │ ├── sections/
+│ │ │ │ ├── DateTimeSection.jsx
+│ │ │ │ ├── ExistingPatientSection.jsx
+│ │ │ │ ├── NewPatientSection.jsx
+│ │ │ │ ├── NotesSection.jsx
+│ │ │ │ ├── OwnerDetailsSection.jsx
+│ │ │ │ ├── VetSelection.jsx
+│ │ │ │ └── index.js
+│ │ │ ├── NewAppointmentModal.jsx
+│ │ │ └── index.js
 │ │ ├── styles/
 │ │ │ └── calendar.css
-│ │ └── components/
-│ │ ├── NewAppointmentModal.jsx
-│ │ └── sections/
-│ │ ├── DateTimeSection.jsx
-│ │ ├── VetSelection.jsx
-│ │ ├── ExistingPatientSection.jsx
-│ │ ├── NewPatientSection.jsx
-│ │ ├── OwnerDetailsSection.jsx
-│ │ ├── NotesSection.jsx
-│ │ ├── NotificationPreferences.jsx
-│ │ └── index.js
-│ ├── Patients/
-│ │ ├── PatientsPage.jsx
-│ │ ├── PatientProfilePage.jsx
-│ │ └── components/
-│ │ ├── PatientsTable.jsx
+│ │ ├── utils/
+│ │ │ └── calendarUtils.js
+│ │ ├── CalendarPage.jsx
+│ │ └── NewAppointmentPage.jsx
+│ ├── Dashboard/
+│ ├── NewPatient/
+│ └── Patients/
+│ ├── components/
 │ │ └── PatientProfile/
 │ │ ├── PetProfile.jsx
-│ │ ├── VaccinationProtocol.jsx
-│ │ ├── VisitHistory.jsx
-│ │ ├── VisitProtocol.jsx
-│ │ ├── components/
-│ │ │ ├── PetImage.jsx
-│ │ │ └── VaccinesList.jsx
-│ │ └── index.js
-│ ├── NewPatient/
-│ │ └── NewPatientPage.jsx
-│ ├── Dashboard.jsx
-│ └── VetQuickActions.jsx
+│ │ └── VisitHistory.jsx
+│ ├── PatientProfilePage.jsx
+│ └── PatientsPage.jsx
 ├── router/
 │ ├── AppRoutes.jsx
 │ └── ProtectedRoute.jsx
-└── utils/
-├── dateUtils.js
-└── imageUtils.js
+├── utils/
+│ ├── dateUtils.js
+│ └── petTypeUtils.js
+└── App.jsx
 
 ## Design System & Branding
 
