@@ -1,20 +1,28 @@
 import { useState } from 'react';
-import Button from '../../../../../components/common/Button';
-import { DateTimeSection, VetSelection, ExistingPatientSection, NewPatientSection, OwnerDetailsSection, NotesSection, NotificationPreferences } from './sections';
+import { Button, NotificationPreferences } from '../../../../../components/common';
+import { 
+  DateTimeSection, 
+  VetSelection, 
+  ExistingPatientSection, 
+  NewPatientSection, 
+  OwnerDetailsSection, 
+  NotesSection 
+} from './sections';
 
 export default function NewAppointmentModal({ 
   isOpen,
   onClose,
   selectedDate,
   selectedTime,
-  setSelectedTime
+  setSelectedTime,
+  initialPatientData
 }) {
   // Form state
   const [formData, setFormData] = useState({
     vet: '',
     existingPatient: {
-      name: '',
-      owner: ''
+      name: initialPatientData?.petName || '',
+      owner: initialPatientData?.ownerName || ''
     },
     newPatient: {
       name: '',
@@ -22,9 +30,9 @@ export default function NewAppointmentModal({
       otherType: ''
     },
     owner: {
-      name: '',
-      phone: '',
-      email: ''
+      name: initialPatientData?.ownerName || '',
+      phone: initialPatientData?.ownerPhone || '',
+      email: initialPatientData?.ownerEmail || ''
     },
     notes: '',
     notificationPrefs: {

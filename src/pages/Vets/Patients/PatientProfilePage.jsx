@@ -37,7 +37,7 @@ const PatientProfilePage = () => {
           </div>
           {/* Visit History takes 1/3 width */}
           <div className="lg:col-span-1">
-            <VisitHistory patientId={patient.id} />
+            <VisitHistory patient={patient} />
           </div>
         </div>
 

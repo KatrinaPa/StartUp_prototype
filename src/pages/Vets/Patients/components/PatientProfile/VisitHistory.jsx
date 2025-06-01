@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { EditIcon } from '../../../../../components/common/Icons';
 import { Button } from '../../../../../components/common';
 import { visits } from '../../../../../data/visitsData_examples';
@@ -6,8 +7,25 @@ import { formatDate } from '../../../../../utils/dateUtils';
 import { ExaminationTags } from '../../../../../components/common';
 
 const VisitHistory = ({ patient }) => {
+  const navigate = useNavigate();
   const [showNewAppointment, setShowNewAppointment] = useState(false);
   const nextVisitDate = '2025-06-17'; // This should come from props or API
+
+  const handleNewAppointment = () => {
+    if (!patient) return;
+
+    navigate('/vet/calendar/new', {
+      state: {
+        patientData: {
+          petName: patient.petName,
+          petType: patient.petType,
+          ownerName: patient.ownerName,
+          ownerPhone: patient.ownerPhone,
+          ownerEmail: patient.ownerEmail
+        }
+      }
+    });
+  };
 
   return (
     <div className="bg-white rounded-3xl px-6 py-8 shadow-sm">
@@ -51,23 +69,12 @@ const VisitHistory = ({ patient }) => {
       </div>
 
       <Button 
-        onClick={() => setShowNewAppointment(true)}
+        onClick={handleNewAppointment}
         variant="secondary"
         className="mt-4 w-full font-bold"
       >
         Ieplānot vizīti
       </Button>
-
-      {showNewAppointment && (
-        <NewAppointmentModal
-          onClose={() => setShowNewAppointment(false)}
-          selectedDate={new Date()}
-          selectedTime={null}
-          setSelectedTime={() => {}}
-          selectedPetType={null}
-          setSelectedPetType={() => {}}
-        />
-      )}
     </div>
   );
 };

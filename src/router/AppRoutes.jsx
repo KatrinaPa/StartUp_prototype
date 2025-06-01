@@ -7,6 +7,7 @@ import NewPatientPage from '../pages/Vets/NewPatient/NewPatientPage';
 import PatientsPage from '../pages/Vets/Patients/PatientsPage';
 import PatientProfilePage from '../pages/Vets/Patients/PatientProfilePage';
 import ProtectedRoute from './ProtectedRoute';
+import NewAppointmentPage from '../pages/Vets/Calendar/NewAppointmentPage';
 
 const AppRoutes = () => {
   return (
@@ -21,7 +22,11 @@ const AppRoutes = () => {
       }>
         <Route index element={<Navigate to="calendar" replace />} />
         <Route path="calendar" element={<CalendarPage />} />
-        <Route path="calendar/new" element={<CalendarPage />} />
+        <Route path="calendar/new" element={
+          <ProtectedRoute userType="vet">
+            <NewAppointmentPage />
+          </ProtectedRoute>
+        } />
         <Route path="new-patient" element={<NewPatientPage />} />
         <Route path="patients">
           <Route index element={<PatientsPage />} />

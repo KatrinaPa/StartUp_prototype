@@ -1,6 +1,10 @@
 import { useState } from 'react';
-import { Modal, Button, TimeSelect } from '../../../../../components/common';
-import { formatDate } from '../../../../../utils/dateUtils';
+import { Button, NotificationPreferences } from '../../../../../components/common';
+import { 
+  AppointmentDateSection,
+  AppointmentDetailsSection,
+  NotesSection,
+} from './sections';
 
 const EditAppointmentModal = ({ 
   isOpen, 
@@ -9,67 +13,61 @@ const EditAppointmentModal = ({
   onSave 
 }) => {
   const [editedAppointment, setEditedAppointment] = useState(appointment);
+  const [notes, setNotes] = useState('Vizītes piezīmes šeit...');
+  const [notificationPrefs, setNotificationPrefs] = useState({
+    smsReminder: false,
+    emailReminder: true,
+    phoneCall: false
+  });
 
   const handleSave = () => {
-    onSave(editedAppointment);
+    onSave({
+      ...editedAppointment,
+      notes,
+      notificationPrefs
+    });
     onClose();
   };
 
+  if (!isOpen) return null;
+
   return (
-    <Modal
-      isOpen={isOpen}
-      onClose={onClose}
-      title="Rediģēt vizīti"
-    >
-      <div className="space-y-4">
-        <div>
-          <h3 className="font-medium">Pacients</h3>
-          <p>{editedAppointment.petName} ({editedAppointment.ownerName})</p>
-        </div>
-
-        <div>
-          <h3 className="font-medium">Datums</h3>
-          <p>{formatDate(new Date(editedAppointment.date))}</p>
-        </div>
-
-        <div>
-          <h3 className="font-medium">Laiks</h3>
-          <TimeSelect
-            value={editedAppointment.time}
-            onChange={(time) => setEditedAppointment({
-              ...editedAppointment,
-              time
-            })}
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+      <div className="bg-primary rounded-2xl w-full max-w-3xl max-h-[100vh] overflow-y-auto p-8 py-6">
+        <h3 className="text-text-dark text-2xl font-bold mb-4">Vizītes detaļas</h3>
+        
+        <div className="space-y-6">
+          <AppointmentDateSection 
+            appointment={editedAppointment}
+            onChange={setEditedAppointment}
           />
-        </div>
 
-        <div>
-          <h3 className="font-medium">Vizītes veids</h3>
-          <select
-            value={editedAppointment.type}
-            onChange={(e) => setEditedAppointment({
-              ...editedAppointment,
-              type: e.target.value
-            })}
-            className="w-full rounded-lg border-gray-300"
-          >
-            <option value="Vakcinācija">Vakcinācija</option>
-            <option value="Konsultācija">Konsultācija</option>
-            <option value="Apskate">Apskate</option>
-            <option value="Operācija">Operācija</option>
-          </select>
-        </div>
+          <AppointmentDetailsSection 
+            appointment={editedAppointment}
+            onChange={setEditedAppointment}
+          />
 
-        <div className="flex justify-end gap-3 mt-6">
-          <Button variant="secondary" onClick={onClose}>
-            Atcelt
-          </Button>
-          <Button onClick={handleSave}>
-            Saglabāt
-          </Button>
+          <NotesSection 
+            value={notes}
+            onChange={setNotes}
+          />
+
+          <NotificationPreferences
+            preferences={notificationPrefs}
+            setPreferences={setNotificationPrefs}
+          />
+
+          <div className="flex justify-end gap-3 mt-6">
+            <Button variant="secondary" onClick={onClose}>
+              Aizvērt
+            </Button>
+            <Button onClick={handleSave}>
+              Saglabāt
+            </Button>
+          </div>
         </div>
       </div>
-    </Modal>
+    </div>
   );
 };
 

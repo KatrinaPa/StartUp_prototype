@@ -30,3 +30,5 @@ export { default as ExaminationTag } from './ExaminationTag';
 export { default as ExaminationTags } from './ExaminationTags';
 
 // ... other exports
+
+export { default as NotificationPreferences } from './NotificationPreferences';
